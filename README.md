@@ -1,6 +1,6 @@
 # Mac Dot Files
 
-My macOS configs, themed with Osaka Jade from [Omarchy](https://omarchy.org) across the terminal, editor, notes and browser.
+My macOS configs, themed with Osaka Jade from [Omarchy](https://omarchy.org) across the terminal, prompt, editor, notes and browser.
 
 ## What's in here
 
@@ -8,7 +8,7 @@ My macOS configs, themed with Osaka Jade from [Omarchy](https://omarchy.org) acr
 | --- | --- |
 | `ghostty` | Ghostty terminal, with the Osaka Jade theme and the Catppuccin themes |
 | `zed` | Zed settings, keymap, Osaka Jade theme and the formatter scripts it calls |
-| `starship` | Shell prompt |
+| `starship` | Starship prompt, with an Osaka Jade palette (the Catppuccin palettes are kept too) |
 | `zsh` | Shell startup files |
 | `git` | Git config and global ignore |
 | `claude` | Claude instructions, settings, agents and the list of installed skills |
