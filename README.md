@@ -23,7 +23,7 @@ Based on these two write ups:
 
 Each package mirrors the home folder, so `zed/.config/zed/settings.json` lives at `~/.config/zed/settings.json`. [GNU Stow](https://www.gnu.org/software/stow/) symlinks them into place.
 
-`macos/defaults.sh` holds the system settings: hidden Dock and menu bar, Mission Control shortcuts and gestures turned off, fewer animations and faster key repeat.
+`macos/defaults.sh` holds the system settings. See [macOS settings](#macos-settings) for the full list.
 
 ## Install
 
@@ -38,7 +38,7 @@ The install script runs `brew bundle`, links every package with Stow, applies th
 A few things need doing by hand:
 
 1. Grant AeroSpace Accessibility access when asked.
-2. Turn on Reduce Motion in System Settings > Accessibility > Display.
+2. Turn on Reduce motion in System Settings > Accessibility > Display (it's further down the page, near Vehicle Motion Cues).
 3. Log out and back in so the trackpad and key repeat settings apply.
 
 ## Keyboard shortcuts
@@ -87,6 +87,66 @@ Web apps open in their own Helium window: Cmd+Ctrl+Shift with A (Claude), C (Cal
 | Cmd+Ctrl+minus / equal | Resize |
 | Cmd+Ctrl+Tab | Next workspace |
 | Cmd+Ctrl+Shift+R | Reset layout and reload config |
+
+## macOS settings
+
+Every system setting this setup changes. The ones marked **script** are applied by `macos/defaults.sh`; the ones marked **manual** have to be done by hand because macOS blocks scripts from changing them.
+
+### Menu bar and Dock
+
+| Setting | Value | How |
+| --- | --- | --- |
+| Automatically hide and show the menu bar | Always | script: `NSGlobalDomain _HIHideMenuBar = true`, `com.apple.controlcenter AutoHideMenuBarOption = 0` |
+| Dock auto hide | On | script: `com.apple.dock autohide = true` |
+| Delay before the Dock appears | 1000 seconds, so it never shows | script: `com.apple.dock autohide-delay = 1000` |
+| Dock show and hide animation | Instant | script: `com.apple.dock autohide-time-modifier = 0` |
+| Bounce when opening apps | Off | script: `com.apple.dock launchanim = false` |
+
+### Spaces and Mission Control
+
+| Setting | Value | How |
+| --- | --- | --- |
+| Automatically rearrange Spaces based on most recent use | Off | script: `com.apple.dock mru-spaces = false` |
+| Group windows by application | On, as AeroSpace recommends | script: `com.apple.dock expose-group-apps = true` |
+| Mission Control and App Exposé trackpad gestures | Off | script: `com.apple.dock showMissionControlGestureEnabled` and `showAppExposeGestureEnabled = false` |
+| Three and four finger swipes up and sideways | Off | script: `Trackpad{Three,Four}Finger{Vert,Horiz}SwipeGesture = 0` for the built in and Bluetooth trackpads, plus the matching `com.apple.trackpad.*SwipeGesture` keys |
+| Mission Control (Ctrl+Up) and Application windows (Ctrl+Down) shortcuts | Off | script: symbolic hot keys 32, 33, 34 and 35 disabled |
+| Move left or right a Space (Ctrl+Left and Ctrl+Right) | Off | script: symbolic hot keys 79, 80, 81 and 82 disabled |
+
+Hot corners were already off. The Mission Control key (F3) can't be disabled through settings.
+
+### Animations and keyboard
+
+| Setting | Value | How |
+| --- | --- | --- |
+| Window opening animations | Off | script: `NSGlobalDomain NSAutomaticWindowAnimationsEnabled = false` |
+| Window resize animation | Instant | script: `NSGlobalDomain NSWindowResizeTime = 0.001` |
+| Finder animations | Off | script: `com.apple.finder DisableAllAnimations = true` |
+| Key repeat rate | Fastest (2) | script: `NSGlobalDomain KeyRepeat = 2` |
+| Delay until repeat | Shortest (15) | script: `NSGlobalDomain InitialKeyRepeat = 15` |
+| Reduce motion | On | manual: System Settings > Accessibility > Display > Reduce motion |
+
+### Apps and appearance
+
+| Setting | Value | How |
+| --- | --- | --- |
+| Helium theme colour | `#111c18` (Osaka Jade) | script: `net.imput.helium BrowserThemeColor`, applied after Helium restarts |
+| Desktop wallpaper | Osaka Jade "glowing city" | manual: System Settings > Wallpaper, using `~/Pictures/Wallpapers/osaka-jade/1-glowing-city.png` |
+| Obsidian theme | Verso Osaka Jade | manual: copy `obsidian/Verso Osaka Jade` into the vault's `.obsidian/themes` and pick it in Settings > Appearance |
+| AeroSpace Accessibility access | Allowed | manual: approve the prompt on first launch |
+
+AeroSpace starts at login from its own config, and SketchyBar and JankyBorders run as Homebrew services.
+
+### Undoing a setting
+
+Delete the key and restart the process that owns it. For example, to bring the Dock back:
+
+```bash
+defaults delete com.apple.dock autohide-delay
+killall Dock
+```
+
+Trackpad gestures and the Mission Control shortcuts are quicker to turn back on in System Settings > Trackpad > More Gestures and System Settings > Keyboard > Keyboard Shortcuts > Mission Control.
 
 ## Notes
 
