@@ -45,8 +45,9 @@ WINDOWS
 WORKSPACES
   cmd+1 to 9                Switch workspace
   cmd+ctrl+shift+1 to 9     Move window to workspace
-  cmd+ctrl+Tab              Next workspace
-  cmd+ctrl+shift+Tab        Previous workspace
+  cmd+ctrl+Tab              Next workspace with windows
+  cmd+ctrl+shift+Tab        Previous workspace with windows
+  3 finger swipe            Next or previous workspace with windows
 
 OTHER
   cmd+ctrl+C                Screenshot an area (Shottr)

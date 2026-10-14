@@ -128,9 +128,10 @@ outer.right      = 10
     cmd-ctrl-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
     cmd-ctrl-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
 
-    # Cycle workspaces (Omarchy: Super+Tab)
-    cmd-ctrl-tab       = 'workspace --wrap-around next'
-    cmd-ctrl-shift-tab = 'workspace --wrap-around prev'
+    # Cycle through workspaces with windows (Omarchy: Super+Tab).
+    # The MX Master gesture button sends these too.
+    cmd-ctrl-tab       = 'exec-and-forget ~/.config/aerospace/workspace-cycle.sh next'
+    cmd-ctrl-shift-tab = 'exec-and-forget ~/.config/aerospace/workspace-cycle.sh prev'
 
     # Reset layout, reload config
     cmd-ctrl-shift-r = ['flatten-workspace-tree', 'reload-config']

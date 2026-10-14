@@ -12,6 +12,7 @@ Based on these two write ups:
 | Package | What it configures |
 | --- | --- |
 | `aerospace` | [AeroSpace](https://github.com/nikitabobko/AeroSpace) tiling, workspaces and every keyboard shortcut |
+| `aerospace-swipe` | Settings for [aerospace-swipe](https://github.com/acsandmann/aerospace-swipe), which switches workspaces with a three finger swipe |
 | `sketchybar` | [SketchyBar](https://github.com/FelixKratz/SketchyBar), which replaces the menu bar |
 | `borders` | [JankyBorders](https://github.com/FelixKratz/JankyBorders), the outline around the focused window |
 | `ghostty` | Ghostty terminal and themes |
@@ -37,7 +38,7 @@ The install script runs `brew bundle`, links every package with Stow, applies th
 
 A few things need doing by hand:
 
-1. Grant AeroSpace Accessibility access when asked.
+1. Grant AeroSpace and AerospaceSwipe Accessibility access when asked.
 2. Turn on Reduce Motion in System Settings > Accessibility > Motion.
 3. Log out and back in so the trackpad and key repeat settings apply.
 
@@ -85,7 +86,8 @@ Web apps open in their own Helium window: Cmd+Ctrl+Shift with A (Claude), C (Cal
 | Cmd+Ctrl+J | Toggle split direction |
 | Cmd+Ctrl+G | Toggle window group |
 | Cmd+Ctrl+minus / equal | Resize |
-| Cmd+Ctrl+Tab | Next workspace |
+| Cmd+Ctrl+Tab and Cmd+Ctrl+Shift+Tab | Next or previous workspace with windows |
+| Three finger swipe left or right | Next or previous workspace with windows |
 | Cmd+Ctrl+Shift+R | Reset layout and reload config |
 
 ## macOS settings
@@ -109,7 +111,7 @@ Every system setting this setup changes. The ones marked **script** are applied 
 | Automatically rearrange Spaces based on most recent use | Off | script: `com.apple.dock mru-spaces = false` |
 | Group windows by application | On, as AeroSpace recommends | script: `com.apple.dock expose-group-apps = true` |
 | Mission Control and App Exposé trackpad gestures | Off | script: `com.apple.dock showMissionControlGestureEnabled` and `showAppExposeGestureEnabled = false` |
-| Three and four finger swipes up and sideways | Off | script: `Trackpad{Three,Four}Finger{Vert,Horiz}SwipeGesture = 0` for the built in and Bluetooth trackpads, plus the matching `com.apple.trackpad.*SwipeGesture` keys |
+| Three and four finger swipes up and sideways | Off in macOS, so aerospace-swipe can use three finger sideways swipes for workspaces | script: `Trackpad{Three,Four}Finger{Vert,Horiz}SwipeGesture = 0` for the built in and Bluetooth trackpads, plus the matching `com.apple.trackpad.*SwipeGesture` keys |
 | Mission Control (Ctrl+Up) and Application windows (Ctrl+Down) shortcuts | Off | script: symbolic hot keys 32, 33, 34 and 35 disabled |
 | Move left or right a Space (Ctrl+Left and Ctrl+Right) | Off | script: symbolic hot keys 79, 80, 81 and 82 disabled |
 
@@ -133,7 +135,8 @@ Hot corners were already off. The Mission Control key (F3) can't be disabled thr
 | Helium theme colour | `#111c18` (Osaka Jade) | script: `net.imput.helium BrowserThemeColor`, applied after Helium restarts |
 | Desktop wallpaper | Osaka Jade "glowing city" | manual: System Settings > Wallpaper, using `~/Pictures/Wallpapers/osaka-jade/1-glowing-city.png` |
 | Obsidian theme | Verso Osaka Jade | manual: copy `obsidian/Verso Osaka Jade` into the vault's `.obsidian/themes` and pick it in Settings > Appearance |
-| AeroSpace Accessibility access | Allowed | manual: approve the prompt on first launch |
+| AeroSpace and AerospaceSwipe Accessibility access | Allowed | manual: approve the prompt on first launch, or add them in System Settings > Privacy & Security > Accessibility |
+| MX Master gesture button | Hold and move left for the next workspace, right for the previous one | manual: Logi Options+ > Buttons > Gesture button > Custom, set left to Cmd+Ctrl+Tab and right to Cmd+Ctrl+Shift+Tab |
 
 AeroSpace starts at login from its own config, and SketchyBar and JankyBorders run as Homebrew services.
 

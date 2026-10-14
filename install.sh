@@ -7,7 +7,7 @@ set -e
 
 cd "$(dirname "$0")"
 
-PACKAGES=(aerospace sketchybar borders ghostty zed starship zsh git claude)
+PACKAGES=(aerospace aerospace-swipe sketchybar borders ghostty zed starship zsh git claude)
 
 if ! command -v brew >/dev/null 2>&1; then
   echo "Install Homebrew first: https://brew.sh"
@@ -21,6 +21,13 @@ echo "Linking configs..."
 mkdir -p "$HOME/.config" "$HOME/.local/bin" "$HOME/Library/Application Support/com.mitchellh.ghostty"
 stow --adopt --target="$HOME" "${PACKAGES[@]}"
 
+echo "Installing trackpad swipes for AeroSpace..."
+SWIPE_DIR="$HOME/.local/share/aerospace-swipe"
+if [ ! -d "$SWIPE_DIR" ]; then
+  git clone https://github.com/acsandmann/aerospace-swipe "$SWIPE_DIR"
+  make -C "$SWIPE_DIR" install
+fi
+
 echo "Applying macOS settings..."
 ./macos/defaults.sh
 
@@ -29,4 +36,4 @@ brew services restart sketchybar
 brew services restart borders
 open -a AeroSpace
 
-echo "Done. Grant AeroSpace Accessibility access when asked."
+echo "Done. Grant AeroSpace and AerospaceSwipe Accessibility access when asked."
