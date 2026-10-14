@@ -51,6 +51,9 @@ echo "Speeding up key repeat..."
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
+echo "Theming Helium with Osaka Jade..."
+defaults write net.imput.helium BrowserThemeColor -string "#111c18"
+
 killall Dock Finder SystemUIServer ControlCenter 2>/dev/null || true
 
 echo "Done. Turn on Reduce Motion by hand in System Settings > Accessibility > Display,"
