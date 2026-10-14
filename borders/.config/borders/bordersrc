@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Sharp Omarchy-style border, Catppuccin Frappé mauve on the focused window
+options=(
+  style=square
+  width=2.0
+  hidpi=on
+  active_color=0xffca9ee6
+  inactive_color=0x00000000
+)
+
+borders "${options[@]}"

@@ -1,0 +1,17 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Josh Donnell
+	email = joshua.donnell1@gmail.com
+	signingkey = /Users/josh/.ssh/id_ed25519_signing.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = /Users/josh/.ssh/allowed_signers

@@ -1,0 +1,102 @@
+{
+  "env": {
+    "CLAUDE_CODE_NO_FLICKER": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Skill(ray-skill:*)",
+      "Skill(php-guidelines-from-spatie:*)",
+      "Skill(fix-github-issue:*)",
+      "Skill(context7-auto-research:*)",
+      "Skill(readability:*)",
+      "Skill(agent-browser:*)",
+      "Bash(gh:*)",
+      "Bash(curl:*)",
+      "Bash(composer:*)",
+      "Bash(vendor/bin/phpunit:*)",
+      "Bash(vendor/bin/pest:*)",
+      "Bash(git:*)",
+      "Bash(php artisan:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(yarn:*)",
+      "Bash(pnpm:*)",
+      "Bash(php:*)",
+      "Bash(docker:*)",
+      "Bash(docker-compose:*)",
+      "Bash(make:*)",
+      "Bash(brew:*)",
+      "Bash(sed:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(echo:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(touch:*)",
+      "Bash(chmod:*)",
+      "Bash(pwd:*)",
+      "Bash(which:*)",
+      "Bash(whoami:*)",
+      "Bash(date:*)",
+      "Bash(wc:*)",
+      "Bash(sort:*)",
+      "Bash(uniq:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(diff:*)",
+      "Bash(awk:*)",
+      "Bash(cut:*)",
+      "Bash(tr:*)",
+      "Bash(open:*)",
+      "WebSearch",
+      "WebFetch",
+      "mcp__laravel-boost__*",
+      "mcp__chrome-devtools__*"
+    ],
+    "defaultMode": "auto"
+  },
+  "model": "opus[1m]",
+  "statusLine": {
+    "type": "command",
+    "command": "bash -c 'cols=$(stty size </dev/tty 2>/dev/null | awk '\"'\"'{print $2}'\"'\"'); export COLUMNS=$(( ${cols:-120} > 4 ? ${cols:-120} - 4 : 1 )); plugin_dir=$(ls -d \"${CLAUDE_CONFIG_DIR:-$HOME/.claude}\"/plugins/cache/*/claude-hud/*/ 2>/dev/null | awk -F/ '\"'\"'{ print $(NF-1) \"\\t\" $(0) }'\"'\"' | grep -E '\"'\"'^[0-9]+\\.[0-9]+\\.[0-9]+\\t'\"'\"' | sort -t. -k1,1n -k2,2n -k3,3n -k4,4n | tail -1 | cut -f2-); exec \"/Users/josh/.bun/bin/bun\" --env-file /dev/null \"${plugin_dir}src/index.ts\"'"
+  },
+  "enabledPlugins": {
+    "claude-hud@claude-hud": true,
+    "impeccable@impeccable": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-hud": {
+      "source": {
+        "source": "github",
+        "repo": "jarrodwatts/claude-hud"
+      }
+    },
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
+      }
+    }
+  },
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Thinking"
+    ]
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "medium"
+    }
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  }
+}

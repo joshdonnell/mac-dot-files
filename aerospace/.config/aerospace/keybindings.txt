@@ -1,0 +1,52 @@
+OMARCHY-STYLE KEYBINDINGS
+
+Super = cmd+ctrl     Super+Shift = cmd+ctrl+shift
+
+APPS
+  cmd+Enter                 New terminal (Ghostty)
+  cmd+ctrl+Enter            Existing terminal (Ghostty)
+  cmd+ctrl+shift+B          Browser (Helium)
+  cmd+shift+Enter           Browser (Helium)
+  cmd+ctrl+alt+shift+B      Browser, private
+  cmd+shift+F               File manager (Finder)
+  cmd+shift+N               Editor (Zed)
+  cmd+shift+O               Obsidian
+  cmd+shift+G               GitHub Desktop
+  cmd+shift+B               Bloom
+  cmd+shift+M               Music (Spotify)
+  cmd+ctrl+shift+D          Database (TablePlus)
+  cmd+ctrl+shift+H          Herd
+  cmd+ctrl+shift+I          IDE (PhpStorm)
+  cmd+ctrl+shift+T          Activity Monitor
+  cmd+Space                 Launcher (Raycast)
+
+WEB APPS
+  cmd+ctrl+shift+A          Claude
+  cmd+ctrl+shift+C          Calendar
+  cmd+ctrl+shift+E          Email
+  cmd+ctrl+shift+Y          YouTube
+  cmd+ctrl+shift+X          X
+  cmd+ctrl+shift+P          Photos
+  cmd+ctrl+shift+S          Maps
+  cmd+ctrl+alt+shift+G      WhatsApp
+
+WINDOWS
+  cmd+ctrl+W                Close window
+  cmd+ctrl+F                Fullscreen
+  cmd+ctrl+T                Toggle floating
+  cmd+ctrl+J                Toggle split direction
+  cmd+ctrl+G                Toggle window group (accordion)
+  cmd+ctrl+arrows           Focus window
+  cmd+ctrl+shift+arrows     Swap window
+  cmd+ctrl+minus / equal    Resize width
+  cmd+ctrl+shift+minus/equal Resize height
+
+WORKSPACES
+  cmd+1 to 9                Switch workspace
+  cmd+ctrl+shift+1 to 9     Move window to workspace
+  cmd+ctrl+Tab              Next workspace
+  cmd+ctrl+shift+Tab        Previous workspace
+
+OTHER
+  cmd+ctrl+K                This cheat sheet
+  cmd+ctrl+shift+R          Reset layout and reload config
