@@ -56,5 +56,5 @@ defaults write net.imput.helium BrowserThemeColor -string "#111c18"
 
 killall Dock Finder SystemUIServer ControlCenter 2>/dev/null || true
 
-echo "Done. Turn on Reduce motion by hand in System Settings > Accessibility > Display,"
+echo "Done. Turn on Reduce Motion by hand in System Settings > Accessibility > Motion,"
 echo "then log out and back in for the trackpad and key repeat changes."

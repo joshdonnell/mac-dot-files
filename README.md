@@ -38,7 +38,7 @@ The install script runs `brew bundle`, links every package with Stow, applies th
 A few things need doing by hand:
 
 1. Grant AeroSpace Accessibility access when asked.
-2. Turn on Reduce motion in System Settings > Accessibility > Display (it's further down the page, near Vehicle Motion Cues).
+2. Turn on Reduce Motion in System Settings > Accessibility > Motion.
 3. Log out and back in so the trackpad and key repeat settings apply.
 
 ## Keyboard shortcuts
@@ -124,7 +124,7 @@ Hot corners were already off. The Mission Control key (F3) can't be disabled thr
 | Finder animations | Off | script: `com.apple.finder DisableAllAnimations = true` |
 | Key repeat rate | Fastest (2) | script: `NSGlobalDomain KeyRepeat = 2` |
 | Delay until repeat | Shortest (15) | script: `NSGlobalDomain InitialKeyRepeat = 15` |
-| Reduce motion | On | manual: System Settings > Accessibility > Display > Reduce motion |
+| Reduce Motion | On | manual: System Settings > Accessibility > Motion > Reduce Motion |
 
 ### Apps and appearance
 
