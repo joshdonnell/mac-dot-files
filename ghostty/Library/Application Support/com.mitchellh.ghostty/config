@@ -1,5 +1,5 @@
 font-family = DankMono Nerd Font Mono
-theme = catppuccin-frappe.conf
+theme = osaka-jade.conf
 term = xterm-256color
 working-directory = /Users/josh/sites
 cursor-style = block

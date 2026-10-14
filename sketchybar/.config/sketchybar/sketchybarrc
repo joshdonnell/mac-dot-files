@@ -7,16 +7,16 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 source "$CONFIG_DIR/colors.sh"
 
 ##### Bar Appearance #####
-# Catppuccin Frappé with sharp corners
+# Osaka Jade with sharp corners
 sketchybar --bar position=top \
                  margin=0 \
                  y_offset=0 \
                  corner_radius=0 \
                  height=38 \
-                 color=$MANTLE
+                 color=$BAR
 
 ##### Defaults #####
-# Frappé text, mauve when highlighted
+# Theme text, brighter when highlighted
 default=(
   padding_left=0
   padding_right=4
@@ -24,8 +24,8 @@ default=(
   label.font="JetBrainsMono Nerd Font:Regular:14.0"
   icon.color=$TEXT
   label.color=$TEXT
-  icon.highlight_color=$MAUVE
-  label.highlight_color=$MAUVE
+  icon.highlight_color=$ACTIVE
+  label.highlight_color=$ACTIVE
   icon.padding_left=4
   icon.padding_right=4
   label.padding_left=4
@@ -42,7 +42,7 @@ for sid in {1..9}; do
   sketchybar --add item space.$sid left \
              --set space.$sid \
                    icon=$sid \
-                   icon.color=$OVERLAY1 \
+                   icon.color=$INACTIVE \
                    icon.padding_left=8 \
                    icon.padding_right=8 \
                    label.drawing=off \

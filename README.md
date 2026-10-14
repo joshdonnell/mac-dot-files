@@ -1,6 +1,6 @@
 # Mac Dot Files
 
-My macOS setup, inspired by [Omarchy](https://omarchy.org). Keyboard driven tiling, a minimal status bar, no Dock, no menu bar and a Catppuccin Frappé theme throughout.
+My macOS setup, inspired by [Omarchy](https://omarchy.org). Keyboard driven tiling, a minimal status bar, no Dock, no menu bar and the Osaka Jade theme from Omarchy throughout.
 
 Based on these two write ups:
 
@@ -14,8 +14,8 @@ Based on these two write ups:
 | `aerospace` | [AeroSpace](https://github.com/nikitabobko/AeroSpace) tiling, workspaces and every keyboard shortcut |
 | `sketchybar` | [SketchyBar](https://github.com/FelixKratz/SketchyBar), which replaces the menu bar |
 | `borders` | [JankyBorders](https://github.com/FelixKratz/JankyBorders), the outline around the focused window |
-| `ghostty` | Ghostty terminal and Catppuccin themes |
-| `zed` | Zed settings, keymap and the formatter scripts it calls |
+| `ghostty` | Ghostty terminal and themes |
+| `zed` | Zed settings, keymap, Osaka Jade theme and the formatter scripts it calls |
 | `starship` | Shell prompt |
 | `zsh` | Shell startup files |
 | `git` | Git config and global ignore |
