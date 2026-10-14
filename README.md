@@ -89,7 +89,7 @@ Web apps open in their own Helium window: Cmd+Ctrl+Shift with A (Claude), C (Cal
 
 * On a notch MacBook, macOS reserves a 38px strip at the top of the built in display even with the menu bar hidden. SketchyBar is sized to fill that strip and AeroSpace only adds a normal gap there. External displays get room for the bar plus the gap.
 * The clock sits on the right rather than in the centre like Omarchy, because the centre is hidden behind the notch.
-* `obsidian/Verso Osaka Jade` is the [Verso](https://github.com/fabrizio-rinaldi/verso) Obsidian theme with Omarchy's Osaka Jade colours added for dark mode. Copy it into a vault's `.obsidian/themes` folder and pick it in Settings > Appearance.
+* `obsidian/Verso Osaka Jade` is the [Verso](https://fabrizio.so) Obsidian theme by Fabrizio Rinaldi, with Omarchy's Osaka Jade colours added for dark mode. Copy it into a vault's `.obsidian/themes` folder and pick it in Settings > Appearance.
 * Helium takes the Osaka Jade background through Chromium's `BrowserThemeColor` policy, set in `macos/defaults.sh`. It applies after Helium restarts.
 * The wallpaper is "glowing city" from Omarchy's Osaka Jade theme. Wallpapers live in `~/Pictures/Wallpapers` and aren't part of this repo.
 * Skills are not copied into the repo since most are third party. `claude/.agents/.skill-lock.json` lists the ones installed with `npx skills` and the repo each came from.
