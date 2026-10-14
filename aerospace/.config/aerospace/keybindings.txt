@@ -32,7 +32,8 @@ WEB APPS
 
 WINDOWS
   cmd+ctrl+W                Close window
-  cmd+ctrl+F                Fullscreen
+  cmd+ctrl+F                Fullscreen, edge to edge
+  cmd+ctrl+alt+F            Fullscreen, keeping gaps
   cmd+ctrl+T                Toggle floating
   cmd+ctrl+J                Toggle split direction
   cmd+ctrl+G                Toggle window group (accordion)
@@ -48,5 +49,7 @@ WORKSPACES
   cmd+ctrl+shift+Tab        Previous workspace
 
 OTHER
+  cmd+ctrl+C                Screenshot an area (Shottr)
+  cmd+ctrl+alt+C            Screenshot the whole screen (Shottr)
   cmd+ctrl+K                This cheat sheet
   cmd+ctrl+shift+R          Reset layout and reload config

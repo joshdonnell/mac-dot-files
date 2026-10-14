@@ -77,7 +77,10 @@ Web apps open in their own Helium window: Cmd+Ctrl+Shift with A (Claude), C (Cal
 | Cmd+Ctrl+arrows | Focus window |
 | Cmd+Ctrl+Shift+arrows | Swap window |
 | Cmd+Ctrl+W | Close window |
-| Cmd+Ctrl+F | Fullscreen |
+| Cmd+Ctrl+F | Fullscreen, edge to edge |
+| Cmd+Ctrl+Alt+F | Fullscreen, keeping gaps |
+| Cmd+Ctrl+C | Screenshot an area (Shottr) |
+| Cmd+Ctrl+Alt+C | Screenshot the whole screen (Shottr) |
 | Cmd+Ctrl+T | Toggle floating |
 | Cmd+Ctrl+J | Toggle split direction |
 | Cmd+Ctrl+G | Toggle window group |

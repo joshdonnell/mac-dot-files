@@ -73,12 +73,17 @@ outer.right      = 10
     cmd-ctrl-shift-s     = 'exec-and-forget ~/.config/aerospace/webapp.sh https://maps.google.com'
     cmd-ctrl-alt-shift-g = 'exec-and-forget ~/.config/aerospace/webapp.sh https://web.whatsapp.com'
 
+    # Screenshots with Shottr (Omarchy: Super+Ctrl+C capture)
+    cmd-ctrl-c     = 'exec-and-forget open -g shottr://grab/area'
+    cmd-ctrl-alt-c = 'exec-and-forget open -g shottr://grab/fullscreen'
+
     # Show this keybinding cheat sheet (Omarchy: Super+K)
     cmd-ctrl-k = 'exec-and-forget open -a TextEdit ~/.config/aerospace/keybindings.txt'
 
     # Window management (Omarchy: Super+letter)
     cmd-ctrl-w = 'close'
-    cmd-ctrl-f = 'fullscreen'
+    cmd-ctrl-f = 'fullscreen --no-outer-gaps'
+    cmd-ctrl-alt-f = 'fullscreen'
     cmd-ctrl-t = 'layout floating tiling'
     cmd-ctrl-j = 'layout horizontal vertical'
     cmd-ctrl-g = 'layout accordion tiles'
