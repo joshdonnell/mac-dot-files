@@ -33,6 +33,7 @@ echo "Applying macOS settings..."
 
 echo "Starting services..."
 brew services restart sketchybar
+sleep 1 && sketchybar --reload
 brew services restart borders
 open -a AeroSpace
 

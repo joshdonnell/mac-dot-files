@@ -8,6 +8,8 @@ set -e
 echo "Hiding the menu bar..."
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
 defaults write com.apple.controlcenter AutoHideMenuBarOption -int 0
+# Running apps only read the defaults above at login, this applies it now
+osascript -e 'tell application "System Events" to tell dock preferences to set autohide menu bar to true'
 
 echo "Hiding the Dock for good..."
 defaults write com.apple.dock autohide -bool true
