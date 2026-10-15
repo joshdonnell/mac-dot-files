@@ -4,6 +4,10 @@ My macOS setup, inspired by [Omarchy](https://omarchy.org). Keyboard driven tili
 
 <img width="3840" height="1620" alt="SCR-20261015-hlyf" src="https://github.com/user-attachments/assets/b22ee189-cf1d-4e8d-b4e2-7bdefb931ec4" />
 
+![Four terminals tiled by dwindle on an ultrawide display](images/dwindle.png)
+
+Dwindle tiling on an ultrawide display. Each new window splits the focused one, side by side when it is wide and stacked when it is tall, so the fourth window lands under the third.
+
 
 Based on these two write ups:
 
