@@ -2,7 +2,9 @@
 
 # Makes the green window button use AeroSpace fullscreen (the same as Cmd+Ctrl+F)
 # instead of macOS native fullscreen, so the window stays in its workspace.
-# Safe to run more than once: fixed UUIDs mean the triggers are updated, not duplicated.
+# Safe to run more than once: each trigger has a fixed UUID and is deleted before being added again.
+# add_new_trigger is used because update_trigger saves new triggers without attaching them
+# to the Global app, so they never fire.
 
 set -e
 
@@ -12,6 +14,7 @@ add_trigger() {
   local json
   json=$(cat <<EOF
 {
+  "BTTUUID": "$uuid",
   "BTTTriggerType": $type,
   "BTTTriggerClass": "BTTTriggerTypeOtherTriggers",
   "BTTEnabled": 1,
@@ -29,7 +32,10 @@ EOF
 )
   osascript - "$uuid" "$json" <<'APPLESCRIPT'
 on run argv
-  tell application "BetterTouchTool" to update_trigger (item 1 of argv) json (item 2 of argv)
+  tell application "BetterTouchTool"
+    delete_trigger (item 1 of argv)
+    add_new_trigger (item 2 of argv)
+  end tell
 end run
 APPLESCRIPT
 }
