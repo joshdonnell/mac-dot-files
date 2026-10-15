@@ -2,6 +2,10 @@
   "env": {
     "CLAUDE_CODE_NO_FLICKER": "1"
   },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "allow": [
       "Skill(ray-skill:*)",
@@ -65,7 +69,8 @@
   },
   "enabledPlugins": {
     "claude-hud@claude-hud": true,
-    "impeccable@impeccable": true
+    "impeccable@impeccable": true,
+    "mattpocock-skills@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "claude-hud": {
@@ -95,8 +100,32 @@
     }
   },
   "skipDangerousModePermissionPrompt": true,
-  "attribution": {
-    "commit": "",
-    "pr": ""
+  "autoMode": {
+    "environment": [
+      "### Org-wide",
+      "**Organization**: None configured",
+      "**Cloud provider(s)**: None configured",
+      "**Repository visibility**: assume private unless the remote host and repo name indicate otherwise, or a visibility check in the transcript shows public (not queryable — no git remotes found in this repo)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: None configured",
+      "**Default / protected branches**: unknown — origin/HEAD unset, no remotes configured",
+      "**CI/CD deploy targets**: None configured",
+      "**Network posture**: None configured",
+      "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine or CI runner with open internet",
+      "**Source control**: The trusted repo only (no remotes configured, no additional orgs configured)",
+      "**Trusted internal domains**: None configured",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: None configured",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: numerous `.env` / `.env.example` / `.envrc` files under archive/, courses/, open-source/, personal/, and temp/ subdirectories of this repo — treat all as holding credentials/secrets; share only with audiences cleared at the [named+specifics] bar",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development",
+      "**Trusted repo**: /Users/josh/sites (no git remotes configured — working directory only; repo currently has 0 tracked files)",
+      "**Org-specific CLIs**: None configured"
+    ]
   }
 }

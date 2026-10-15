@@ -7,7 +7,7 @@ set -e
 
 cd "$(dirname "$0")"
 
-PACKAGES=(aerospace aerospace-swipe sketchybar borders ghostty zed starship zsh git claude)
+PACKAGES=(ghostty zed starship zsh git claude)
 
 if ! command -v brew >/dev/null 2>&1; then
   echo "Install Homebrew first: https://brew.sh"
@@ -21,27 +21,7 @@ echo "Linking configs..."
 mkdir -p "$HOME/.config" "$HOME/.local/bin" "$HOME/Library/Application Support/com.mitchellh.ghostty"
 stow --adopt --target="$HOME" "${PACKAGES[@]}"
 
-echo "Building DwindleSpace (AeroSpace with dwindle tiling)..."
-./dwindlespace/install.sh
-
-echo "Installing trackpad swipes for AeroSpace..."
-SWIPE_DIR="$HOME/.local/share/aerospace-swipe"
-if [ ! -d "$SWIPE_DIR" ]; then
-  git clone https://github.com/acsandmann/aerospace-swipe "$SWIPE_DIR"
-  make -C "$SWIPE_DIR" install
-fi
-
 echo "Applying macOS settings..."
 ./macos/defaults.sh
 
-echo "Starting services..."
-brew services restart sketchybar
-sleep 1 && sketchybar --reload
-brew services restart borders
-
-echo "Pointing the green window button at AeroSpace fullscreen..."
-open -a BetterTouchTool
-sleep 5
-./bettertouchtool/green-button.sh
-
-echo "Done. Grant AeroSpace, AerospaceSwipe and BetterTouchTool Accessibility access when asked."
+echo "Done."

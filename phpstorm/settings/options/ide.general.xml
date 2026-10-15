@@ -1,0 +1,47 @@
+<application>
+  <component name="GeneralSettings">
+    <option name="showTipsOnStartup" value="false" />
+    <option name="confirmOpenNewProject2" value="0" />
+  </component>
+  <component name="Registry">
+    <entry key="switched.from.classic.to.islands" value="false" source="SYSTEM" />
+    <entry key="ide.experimental.ui" value="true" source="SYSTEM" />
+    <entry key="trace.state.event.service.url" value="https://api.jetbrains.cloud/trace-status" source="SYSTEM" />
+    <entry key="ide.show.plugin.suggestions.on.open" value="false" source="SYSTEM" />
+    <entry key="ui.simplified" value="true" source="SYSTEM" />
+    <entry key="vcs.log.keep.up.to.date" value="false" source="SYSTEM" />
+    <entry key="llm.chat.agent.codex.install.codex.version" value="0.137.0" source="MANAGER" />
+    <entry key="llm.chat.agent.codex.install.acp.server.version" value="0.0.46" source="MANAGER" />
+    <entry key="i18n.locale" value="en" source="SYSTEM" />
+  </component>
+  <component name="StatusBar">
+    <option name="widgets">
+      <map>
+        <entry key="CodeStyleStatusBarWidget" value="false" />
+        <entry key="Encoding" value="false" />
+        <entry key="FatalError" value="false" />
+        <entry key="GridAggregator" value="false" />
+        <entry key="GridPosition" value="false" />
+        <entry key="IncomingChanges" value="false" />
+        <entry key="InsertOverwrite" value="false" />
+        <entry key="InspectionProfile" value="false" />
+        <entry key="JSONSchemaSelector" value="false" />
+        <entry key="LanguageServiceStatusBarWidget" value="false" />
+        <entry key="Laravel" value="false" />
+        <entry key="LineSeparator" value="false" />
+        <entry key="NonCommercial" value="false" />
+        <entry key="Notifications" value="false" />
+        <entry key="Position" value="false" />
+        <entry key="ReadOnlyAttribute" value="false" />
+        <entry key="TrialStatusBarWidget" value="false" />
+        <entry key="VfsRefresh" value="true" />
+        <entry key="largeFileEncodingWidget" value="false" />
+        <entry key="light.edit.git" value="false" />
+        <entry key="light.edit.large.file.encoding.widget" value="false" />
+        <entry key="php.debug.status.widget" value="false" />
+        <entry key="settingsEntryPointWidget" value="false" />
+        <entry key="webDeployment.default.server.widget" value="false" />
+      </map>
+    </option>
+  </component>
+</application>

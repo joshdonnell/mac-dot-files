@@ -1,0 +1,21 @@
+<scheme name="_@user_Catppuccin Frappé" version="142" parent_scheme="Darcula">
+  <option name="FONT_SCALE" value="1.0" />
+  <metaInfo>
+    <property name="ide">PhpStorm</property>
+    <property name="ideVersion">2025.2.4.0.0</property>
+    <property name="originalScheme">Catppuccin Frappé</property>
+    <property name="partialSave">true</property>
+    <property name="pluginId">com.github.catppuccin.jetbrains</property>
+  </metaInfo>
+  <option name="LINE_SPACING" value="1.2" />
+  <option name="EDITOR_FONT_SIZE" value="14" />
+  <option name="EDITOR_FONT_NAME" value="JetBrains Mono" />
+  <attributes>
+    <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
+      <value>
+        <option name="FOREGROUND" value="c6d0f5" />
+        <option name="BACKGROUND" value="303446" />
+      </value>
+    </option>
+  </attributes>
+</scheme>

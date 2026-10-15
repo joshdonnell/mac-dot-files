@@ -1,0 +1,8 @@
+<application>
+  <component name="LafManager">
+    <laf themeId="com.github.catppuccin.frappe.jetbrains" />
+    <lafs-to-previous-schemes>
+      <laf-to-scheme laf="Islands Dark" scheme="_@user_Catppuccin Frappé" />
+    </lafs-to-previous-schemes>
+  </component>
+</application>

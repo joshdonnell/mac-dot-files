@@ -1,0 +1,12 @@
+Alpine.js Support
+Antlers Language Support
+Catppuccin Icons
+Catppuccin Theme
+dotenv
+ej
+laravel-idea
+mcpserver
+ml-llm
+oxc-intellij-plugin
+PHP Annotations
+vitejs

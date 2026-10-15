@@ -1,0 +1,68 @@
+<application>
+  <component name="ProjectManager">
+    <defaultProject>
+      <component name="ComposerSettings">
+        <execution />
+      </component>
+      <component name="InspectionProjectProfileManager">
+        <profile version="1.0">
+          <option name="myName" value="Project Default" />
+          <inspection_tool class="LaravelPintValidationInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+          <inspection_tool class="PhpStanGlobal" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+        </profile>
+        <version value="1.0" />
+      </component>
+      <component name="LaravelPintOptionsConfiguration">
+        <option name="pintJsonPath" value="pint.json" />
+      </component>
+      <component name="LaravelPintProjectConfiguration">
+        <option name="selectedConfigurationId" value="Local" />
+      </component>
+      <component name="OptimizeOnSaveOptions">
+        <option name="myRunOnSave" value="true" />
+      </component>
+      <component name="OxcSettings">
+        <option name="fixAllOnSave" value="true" />
+      </component>
+      <component name="OxfmtSettings">
+        <option name="fixAllOnSave" value="true" />
+      </component>
+      <component name="PhpExternalFormatter">
+        <option name="externalFormatter" value="LARAVEL_PINT" />
+      </component>
+      <component name="PhpProjectSharedConfiguration" php_language_level="8.5" />
+      <component name="PhpStanOptionsConfiguration">
+        <option name="config" value="phpstan.neo" />
+        <option name="memoryLimit" value="4G" />
+      </component>
+      <component name="PhpStanProjectConfiguration">
+        <option name="selectedConfigurationId" value="Local" />
+      </component>
+      <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.selected.package.eslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+      <component name="TaskManager">
+        <task active="true" id="Default" summary="Default task">
+          <created>1782974988986</created>
+          <option name="number" value="Default" />
+          <option name="presentableId" value="Default" />
+          <updated>1782974988986</updated>
+          <workItem from="1782974988987" duration="200000" />
+        </task>
+        <servers />
+      </component>
+      <component name="TimeTrackingManager">
+        <option name="totallyTimeSpent" value="200000" />
+      </component>
+      <component name="WindowStateProjectService">
+        <state x="409" y="166" key="SettingsEditor" timestamp="1782975071218">
+          <screen x="0" y="39" width="1800" height="1130" />
+        </state>
+        <state x="409" y="166" key="SettingsEditor/0.39.1800.1130" timestamp="1782975071218" />
+      </component>
+    </defaultProject>
+  </component>
+</application>
