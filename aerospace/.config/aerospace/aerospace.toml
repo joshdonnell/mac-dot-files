@@ -177,3 +177,67 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'cc.ffitch.shottr'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.hegenberg.BetterTouchTool'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.caldis.Mos'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.logi.optionsplus'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyapp.DBngin'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'de.beyondco.herd'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.nordsec.nordpass'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.alienator88.Pearcleaner'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.daisydiskapp.DaisyDiskStandAlone'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'net.pornel.ImageOptim'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.calculator'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.DigitalColorMeter'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.archiveutility'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ScreenContinuity'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.SystemProfiler'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.DiskUtility'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.TextEdit'
+run = 'layout floating'
