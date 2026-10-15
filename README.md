@@ -24,6 +24,8 @@ Based on these two write ups:
 
 Each package mirrors the home folder, so `zed/.config/zed/settings.json` lives at `~/.config/zed/settings.json`. [GNU Stow](https://www.gnu.org/software/stow/) symlinks them into place.
 
+`bettertouchtool/green-button.sh` makes the green window button use AeroSpace fullscreen instead of macOS native fullscreen, so the window stays in its workspace. It adds two [BetterTouchTool](https://folivora.ai) triggers through BTT's AppleScript interface and is safe to run again.
+
 `macos/defaults.sh` holds the system settings. See [macOS settings](#macos-settings) for the full list.
 
 ## Install
@@ -38,7 +40,7 @@ The install script runs `brew bundle`, links every package with Stow, applies th
 
 A few things need doing by hand:
 
-1. Grant AeroSpace and AerospaceSwipe Accessibility access when asked.
+1. Grant AeroSpace, AerospaceSwipe and BetterTouchTool Accessibility access when asked.
 2. Turn on Reduce Motion in System Settings > Accessibility > Motion.
 3. Log out and back in so the trackpad and key repeat settings apply.
 
@@ -78,7 +80,7 @@ Web apps open in their own Helium window: Cmd+Ctrl+Shift with A (Claude), C (Cal
 | Cmd+Ctrl+arrows | Focus window |
 | Cmd+Ctrl+Shift+arrows | Swap window |
 | Cmd+Ctrl+W | Close window |
-| Cmd+Ctrl+F | Fullscreen, edge to edge |
+| Cmd+Ctrl+F or the green window button | Fullscreen, edge to edge |
 | Cmd+Ctrl+Alt+F | Fullscreen, keeping gaps |
 | Cmd+Ctrl+C | Screenshot an area (Shottr) |
 | Cmd+Ctrl+Alt+C | Screenshot the whole screen (Shottr) |
@@ -135,7 +137,7 @@ Hot corners were already off. The Mission Control key (F3) can't be disabled thr
 | Helium theme colour | `#111c18` (Osaka Jade) | script: `net.imput.helium BrowserThemeColor`, applied after Helium restarts |
 | Desktop wallpaper | Osaka Jade "glowing city" | manual: System Settings > Wallpaper, using `~/Pictures/Wallpapers/osaka-jade/1-glowing-city.png` |
 | Obsidian theme | Verso Osaka Jade | manual: copy `obsidian/Verso Osaka Jade` into the vault's `.obsidian/themes` and pick it in Settings > Appearance |
-| AeroSpace and AerospaceSwipe Accessibility access | Allowed | manual: approve the prompt on first launch, or add them in System Settings > Privacy & Security > Accessibility |
+| AeroSpace, AerospaceSwipe and BetterTouchTool Accessibility access | Allowed | manual: approve the prompt on first launch, or add them in System Settings > Privacy & Security > Accessibility |
 | MX Master gesture button | Hold and move left for the next workspace, right for the previous one | manual: Logi Options+ > Buttons > Gesture button > Custom, set left to Cmd+Ctrl+Tab and right to Cmd+Ctrl+Shift+Tab |
 
 AeroSpace starts at login from its own config, and SketchyBar and JankyBorders run as Homebrew services.

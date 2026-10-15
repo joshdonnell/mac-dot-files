@@ -37,4 +37,9 @@ sleep 1 && sketchybar --reload
 brew services restart borders
 open -a AeroSpace
 
-echo "Done. Grant AeroSpace and AerospaceSwipe Accessibility access when asked."
+echo "Pointing the green window button at AeroSpace fullscreen..."
+open -a BetterTouchTool
+sleep 5
+./bettertouchtool/green-button.sh
+
+echo "Done. Grant AeroSpace, AerospaceSwipe and BetterTouchTool Accessibility access when asked."

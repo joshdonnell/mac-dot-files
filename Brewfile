@@ -7,6 +7,7 @@ brew "felixkratz/formulae/sketchybar"
 brew "felixkratz/formulae/borders"
 cask "font-jetbrains-mono-nerd-font"
 cask "raycast"
+cask "bettertouchtool"
 
 # Tools
 brew "stow"
