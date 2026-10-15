@@ -2,6 +2,9 @@
 
 My macOS setup, inspired by [Omarchy](https://omarchy.org). Keyboard driven tiling, a minimal status bar, no Dock, no menu bar and the Osaka Jade theme from Omarchy throughout.
 
+<img width="3840" height="1620" alt="SCR-20261015-hlyf" src="https://github.com/user-attachments/assets/b22ee189-cf1d-4e8d-b4e2-7bdefb931ec4" />
+
+
 Based on these two write ups:
 
 * [Building an Omarchy inspired setup on macOS](https://www.penkin.me/development/tools/productivity/configuration/2025/11/28/building-omarchy-inspired-setup-macos.html) by Christopher Penkin
