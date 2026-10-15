@@ -21,8 +21,14 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 
+# Omarchy style dwindle tiling, from the DwindleSpace fork of AeroSpace
+# (see dwindlespace/install.sh). A new window splits the focused one, side by
+# side if it's wide and stacked if it's tall, like Hyprland's dwindle layout.
+window-insertion = 'dwindle'
+
 enable-normalization-flatten-containers = true
-enable-normalization-opposite-orientation-for-nested-containers = true
+# Off, because dwindle already picks the split direction
+enable-normalization-opposite-orientation-for-nested-containers = false
 
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
@@ -107,21 +113,22 @@ outer.right      = 10
     cmd-ctrl-up    = 'focus --boundaries-action wrap-around-the-workspace up'
     cmd-ctrl-right = 'focus --boundaries-action wrap-around-the-workspace right'
 
-    # Swap windows (Omarchy: Super+Shift+arrows)
-    cmd-ctrl-shift-left  = 'move left'
-    cmd-ctrl-shift-down  = 'move down'
-    cmd-ctrl-shift-up    = 'move up'
-    cmd-ctrl-shift-right = 'move right'
+    # Swap windows (Omarchy: Super+Shift+arrows). swap keeps the dwindle layout's
+    # shape, where move would pull the window out and rebuild the splits.
+    cmd-ctrl-shift-left  = 'swap left'
+    cmd-ctrl-shift-down  = 'swap down'
+    cmd-ctrl-shift-up    = 'swap up'
+    cmd-ctrl-shift-right = 'swap right'
 
     # Send the window to the other display, and follow it
     cmd-ctrl-alt-left  = 'move-node-to-monitor --focus-follows-window --wrap-around prev'
     cmd-ctrl-alt-right = 'move-node-to-monitor --focus-follows-window --wrap-around next'
 
     # Resize (Omarchy: Super+minus / Super+equal)
-    cmd-ctrl-minus       = 'resize width -50'
-    cmd-ctrl-equal       = 'resize width +50'
-    cmd-ctrl-shift-minus = 'resize height -50'
-    cmd-ctrl-shift-equal = 'resize height +50'
+    cmd-ctrl-minus       = 'resize width -100'
+    cmd-ctrl-equal       = 'resize width +100'
+    cmd-ctrl-shift-minus = 'resize height -100'
+    cmd-ctrl-shift-equal = 'resize height +100'
 
     # Switch workspace (Omarchy: Super+1-9)
     cmd-1 = 'workspace 1'
@@ -144,6 +151,17 @@ outer.right      = 10
     cmd-ctrl-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
     cmd-ctrl-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
     cmd-ctrl-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
+
+    # Move window to workspace without following it (Omarchy: Super+Shift+Alt+1-9)
+    cmd-ctrl-alt-shift-1 = 'move-node-to-workspace 1'
+    cmd-ctrl-alt-shift-2 = 'move-node-to-workspace 2'
+    cmd-ctrl-alt-shift-3 = 'move-node-to-workspace 3'
+    cmd-ctrl-alt-shift-4 = 'move-node-to-workspace 4'
+    cmd-ctrl-alt-shift-5 = 'move-node-to-workspace 5'
+    cmd-ctrl-alt-shift-6 = 'move-node-to-workspace 6'
+    cmd-ctrl-alt-shift-7 = 'move-node-to-workspace 7'
+    cmd-ctrl-alt-shift-8 = 'move-node-to-workspace 8'
+    cmd-ctrl-alt-shift-9 = 'move-node-to-workspace 9'
 
     # Cycle through workspaces with windows (Omarchy: Super+Tab).
     # The MX Master gesture button sends these too.

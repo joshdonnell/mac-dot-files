@@ -21,6 +21,9 @@ echo "Linking configs..."
 mkdir -p "$HOME/.config" "$HOME/.local/bin" "$HOME/Library/Application Support/com.mitchellh.ghostty"
 stow --adopt --target="$HOME" "${PACKAGES[@]}"
 
+echo "Building DwindleSpace (AeroSpace with dwindle tiling)..."
+./dwindlespace/install.sh
+
 echo "Installing trackpad swipes for AeroSpace..."
 SWIPE_DIR="$HOME/.local/share/aerospace-swipe"
 if [ ! -d "$SWIPE_DIR" ]; then
@@ -35,7 +38,6 @@ echo "Starting services..."
 brew services restart sketchybar
 sleep 1 && sketchybar --reload
 brew services restart borders
-open -a AeroSpace
 
 echo "Pointing the green window button at AeroSpace fullscreen..."
 open -a BetterTouchTool

@@ -14,7 +14,7 @@ Based on these two write ups:
 
 | Package | What it configures |
 | --- | --- |
-| `aerospace` | [AeroSpace](https://github.com/nikitabobko/AeroSpace) tiling, workspaces and every keyboard shortcut |
+| `aerospace` | [AeroSpace](https://github.com/nikitabobko/AeroSpace) tiling, workspaces and every keyboard shortcut. It runs on DwindleSpace, see below |
 | `aerospace-swipe` | Settings for [aerospace-swipe](https://github.com/acsandmann/aerospace-swipe), which switches workspaces with a three finger swipe |
 | `sketchybar` | [SketchyBar](https://github.com/FelixKratz/SketchyBar), which replaces the menu bar |
 | `borders` | [JankyBorders](https://github.com/FelixKratz/JankyBorders), the outline around the focused window |
@@ -26,6 +26,8 @@ Based on these two write ups:
 | `claude` | Claude instructions, settings, agents and the list of installed skills |
 
 Each package mirrors the home folder, so `zed/.config/zed/settings.json` lives at `~/.config/zed/settings.json`. [GNU Stow](https://www.gnu.org/software/stow/) symlinks them into place.
+
+`dwindlespace/install.sh` builds and installs [DwindleSpace](https://github.com/imafukka/DwindleSpace), a small fork of AeroSpace that adds Hyprland style dwindle tiling like Omarchy. A new window splits the focused one, side by side when that window is wide and stacked when it is tall. It needs Xcode, and it replaces the Homebrew AeroSpace app. Run the script again to update. To go back to stock AeroSpace, run `brew install --cask aerospace` and remove `window-insertion` from `aerospace.toml`.
 
 `bettertouchtool/green-button.sh` makes the green window button use AeroSpace fullscreen instead of macOS native fullscreen, so the window stays in its workspace. It adds two [BetterTouchTool](https://folivora.ai) triggers through BTT's AppleScript interface and is safe to run again.
 
@@ -43,7 +45,7 @@ The install script runs `brew bundle`, links every package with Stow, applies th
 
 A few things need doing by hand:
 
-1. Grant AeroSpace, AerospaceSwipe and BetterTouchTool Accessibility access when asked.
+1. Grant AeroSpace, AerospaceSwipe and BetterTouchTool Accessibility access when asked. DwindleSpace is ad hoc signed, so after each rebuild remove the old AeroSpace entry in Accessibility and allow the new one.
 2. Turn on Reduce Motion in System Settings > Accessibility > Motion.
 3. Log out and back in so the trackpad and key repeat settings apply.
 
@@ -80,6 +82,7 @@ Web apps open in their own Helium window: Cmd+Ctrl+Shift with A (Claude), C (Cal
 | --- | --- |
 | Cmd+1 to 9 | Switch workspace. 1 to 5 live on an external display when one is plugged in, 6 to 9 on the MacBook |
 | Cmd+Ctrl+Shift+1 to 9 | Move window to workspace |
+| Cmd+Ctrl+Alt+Shift+1 to 9 | Move window to workspace without following it |
 | Cmd+Ctrl+arrows | Focus window |
 | Cmd+Ctrl+Shift+arrows | Swap window |
 | Cmd+Ctrl+Alt+Left / Right | Move window to the other display |

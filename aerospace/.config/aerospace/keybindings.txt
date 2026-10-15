@@ -46,6 +46,7 @@ WINDOWS
 WORKSPACES
   cmd+1 to 9                Switch workspace (1 to 5 on the external display)
   cmd+ctrl+shift+1 to 9     Move window to workspace
+  cmd+ctrl+alt+shift+1 to 9 Move window to workspace, stay here
   cmd+ctrl+Tab              Next workspace with windows
   cmd+ctrl+shift+Tab        Previous workspace with windows
   3 finger swipe            Next or previous workspace with windows

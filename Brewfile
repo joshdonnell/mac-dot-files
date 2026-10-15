@@ -1,8 +1,6 @@
-tap "nikitabobko/tap"
 tap "felixkratz/formulae"
 
 # Desktop
-cask "nikitabobko/tap/aerospace"
 brew "felixkratz/formulae/sketchybar"
 brew "felixkratz/formulae/borders"
 cask "font-jetbrains-mono-nerd-font"
@@ -11,6 +9,7 @@ cask "bettertouchtool"
 
 # Tools
 brew "stow"
+brew "bash" # DwindleSpace build scripts need bash 5
 brew "starship"
 brew "gh"
 
