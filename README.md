@@ -75,10 +75,11 @@ Web apps open in their own Helium window: Cmd+Ctrl+Shift with A (Claude), C (Cal
 
 | Shortcut | Action |
 | --- | --- |
-| Cmd+1 to 9 | Switch workspace |
+| Cmd+1 to 9 | Switch workspace. 1 to 5 live on an external display when one is plugged in, 6 to 9 on the MacBook |
 | Cmd+Ctrl+Shift+1 to 9 | Move window to workspace |
 | Cmd+Ctrl+arrows | Focus window |
 | Cmd+Ctrl+Shift+arrows | Swap window |
+| Cmd+Ctrl+Alt+Left / Right | Move window to the other display |
 | Cmd+Ctrl+W | Close window |
 | Cmd+Ctrl+F or the green window button | Fullscreen, edge to edge |
 | Cmd+Ctrl+Alt+F | Fullscreen, keeping gaps |

@@ -39,11 +39,12 @@ WINDOWS
   cmd+ctrl+G                Toggle window group (accordion)
   cmd+ctrl+arrows           Focus window
   cmd+ctrl+shift+arrows     Swap window
+  cmd+ctrl+alt+left/right   Move window to the other display
   cmd+ctrl+minus / equal    Resize width
   cmd+ctrl+shift+minus/equal Resize height
 
 WORKSPACES
-  cmd+1 to 9                Switch workspace
+  cmd+1 to 9                Switch workspace (1 to 5 on the external display)
   cmd+ctrl+shift+1 to 9     Move window to workspace
   cmd+ctrl+Tab              Next workspace with windows
   cmd+ctrl+shift+Tab        Previous workspace with windows

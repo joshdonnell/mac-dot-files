@@ -42,6 +42,19 @@ outer.bottom     = 10
 outer.top        = [{ monitor.built-in = 10 }, 48]
 outer.right      = 10
 
+# 1 to 5 live on the external display and 6 to 9 on the MacBook.
+# With no external display plugged in, they all fall back to the MacBook.
+[workspace-to-monitor-force-assignment]
+1 = ['secondary', 'built-in']
+2 = ['secondary', 'built-in']
+3 = ['secondary', 'built-in']
+4 = ['secondary', 'built-in']
+5 = ['secondary', 'built-in']
+6 = 'built-in'
+7 = 'built-in'
+8 = 'built-in'
+9 = 'built-in'
+
 [mode.main.binding]
 
     # Terminal (Omarchy: Super+Enter). cmd+ctrl+Enter jumps to an existing one.
@@ -99,6 +112,10 @@ outer.right      = 10
     cmd-ctrl-shift-down  = 'move down'
     cmd-ctrl-shift-up    = 'move up'
     cmd-ctrl-shift-right = 'move right'
+
+    # Send the window to the other display, and follow it
+    cmd-ctrl-alt-left  = 'move-node-to-monitor --focus-follows-window --wrap-around prev'
+    cmd-ctrl-alt-right = 'move-node-to-monitor --focus-follows-window --wrap-around next'
 
     # Resize (Omarchy: Super+minus / Super+equal)
     cmd-ctrl-minus       = 'resize width -50'
