@@ -2,7 +2,49 @@
   <component name="ProjectManager">
     <defaultProject>
       <component name="ComposerSettings">
-        <execution />
+        <execution>
+          <execution>
+            <execution>
+              <execution>
+                <execution />
+              </execution>
+            </execution>
+          </execution>
+        </execution>
+      </component>
+      <component name="FormatOnSaveOptions">
+        <option name="myRunOnSave" value="true" />
+        <option name="myAllFileTypesSelected" value="false" />
+        <option name="mySelectedFileTypes">
+          <set>
+            <option value="Antlers" />
+            <option value="Blade" />
+            <option value="CSS" />
+            <option value="DTD" />
+            <option value="EditorConfig" />
+            <option value="Flow" />
+            <option value="HTML" />
+            <option value="Ini" />
+            <option value="JSHint" />
+            <option value="JSX" />
+            <option value="JavaScript" />
+            <option value="Less" />
+            <option value="Makefile" />
+            <option value="PHP" />
+            <option value="PostCSS" />
+            <option value="RNG Compact" />
+            <option value="SVG" />
+            <option value="Shell Script" />
+            <option value="SourceMap" />
+            <option value="Twig" />
+            <option value="TypeScript" />
+            <option value="TypeScript JSX" />
+            <option value="XHTML" />
+            <option value="XML" />
+            <option value="YAML" />
+            <option value="tsconfig" />
+          </set>
+        </option>
       </component>
       <component name="InspectionProjectProfileManager">
         <profile version="1.0">
@@ -17,9 +59,6 @@
       </component>
       <component name="LaravelPintProjectConfiguration">
         <option name="selectedConfigurationId" value="Local" />
-      </component>
-      <component name="OptimizeOnSaveOptions">
-        <option name="myRunOnSave" value="true" />
       </component>
       <component name="OxcSettings">
         <option name="fixAllOnSave" value="true" />
@@ -41,7 +80,7 @@
       <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "node.js.selected.package.eslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
       <component name="TaskManager">
@@ -58,10 +97,10 @@
         <option name="totallyTimeSpent" value="200000" />
       </component>
       <component name="WindowStateProjectService">
-        <state x="409" y="166" key="SettingsEditor" timestamp="1782975071218">
+        <state x="409" y="166" key="SettingsEditor" timestamp="1790149108438">
           <screen x="0" y="39" width="1800" height="1130" />
         </state>
-        <state x="409" y="166" key="SettingsEditor/0.39.1800.1130" timestamp="1782975071218" />
+        <state x="409" y="166" key="SettingsEditor/0.39.1800.1130" timestamp="1790149108438" />
       </component>
     </defaultProject>
   </component>

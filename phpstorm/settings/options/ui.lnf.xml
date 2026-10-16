@@ -1,7 +1,6 @@
 <application>
   <component name="UISettings">
-    <option name="HIDE_TOOL_STRIPES" value="true" />
-    <option name="smoothScrolling" value="false" />
+    <option name="HIDE_TOOL_STRIPES" value="false" />
     <option name="UI_DENSITY" value="COMPACT" />
   </component>
 </application>

@@ -1,12 +1,17 @@
-Alpine.js Support
 Antlers Language Support
 Catppuccin Icons
 Catppuccin Theme
 dotenv
 ej
+IntellijAlpine
 laravel-idea
+Light_Lite.jar
 mcpserver
 ml-llm
+osaka-jade-theme.jar
 oxc-intellij-plugin
 PHP Annotations
+vcs-hg
+vcs-perforce
+vcs-svn
 vitejs

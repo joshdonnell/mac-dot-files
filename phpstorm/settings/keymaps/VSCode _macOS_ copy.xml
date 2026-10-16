@@ -1,4 +1,5 @@
 <keymap version="1" name="VSCode (macOS) copy" parent="VSCode OSX">
+  <action id="ActivateBookmarksToolWindow" />
   <action id="ActivateTerminalToolWindow">
     <keyboard-shortcut first-keystroke="ctrl back_quote" />
     <keyboard-shortcut first-keystroke="meta j" />

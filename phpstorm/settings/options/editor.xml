@@ -7,13 +7,10 @@
         <option value="vcs.code.vision" />
       </set>
     </option>
-    <option name="enabled" value="false" />
-  </component>
-  <component name="DaemonCodeAnalyzerSettings">
-    <option name="AUTOREPARSE_DELAY" value="1500" />
   </component>
   <component name="EditorSettings">
     <option name="SHOW_INSPECTION_WIDGET" value="false" />
+    <option name="SHOW_INSPECTION_WIDGET_ICON" value="false" />
     <option name="IS_RIGHT_MARGIN_SHOWN" value="false" />
     <option name="SHOW_BREADCRUMBS" value="false" />
   </component>

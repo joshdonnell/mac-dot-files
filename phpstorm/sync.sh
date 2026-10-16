@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Copies PhpStorm settings between this repo and the newest PhpStorm config folder.
+# Copies PhpStorm settings between this repo and the newest PhpStorm Light (EAP)
+# config folder, falling back to the newest PhpStorm config folder.
 #   ./phpstorm/sync.sh pull   copy the IDE's settings into the repo
 #   ./phpstorm/sync.sh push   copy the repo's settings into the IDE (quit PhpStorm first)
 #
@@ -34,9 +35,11 @@ FILES=(
   options/projectView.xml
   options/terminal-font.xml
   options/ui.lnf.xml
+  options/window.layouts.xml
 )
 
-IDE_DIR=$(ls -d "$HOME/Library/Application Support/JetBrains/PhpStorm20"* 2>/dev/null | sort -V | tail -1)
+IDE_DIR=$(ls -d "$HOME/Library/Application Support/JetBrains/PhpStormLight20"* 2>/dev/null | sort -V | tail -1)
+[ -z "$IDE_DIR" ] && IDE_DIR=$(ls -d "$HOME/Library/Application Support/JetBrains/PhpStorm20"* 2>/dev/null | sort -V | tail -1)
 
 if [ -z "$IDE_DIR" ]; then
   echo "No PhpStorm config folder found. Open PhpStorm once first."
@@ -55,7 +58,7 @@ case "$1" in
     echo "Pulled settings from $IDE_DIR"
     ;;
   push)
-    if pgrep -xq phpstorm; then
+    if pgrep -q -f "PhpStorm.*\.app/Contents/MacOS"; then
       echo "Quit PhpStorm first, it overwrites its settings on exit."
       exit 1
     fi
