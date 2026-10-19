@@ -85,3 +85,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Herd injected PHP 8.6 configuration.
 export HERD_PHP_86_INI_SCAN_DIR="/Users/josh/Library/Application Support/Herd/config/php/86"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Lerd
+export PATH="/Users/josh/.local/share/lerd/bin:$PATH"
+
+# Lerd completions
+fpath=(/Users/josh/.local/share/zsh/site-functions $fpath)
+autoload -Uz compinit && compinit

@@ -1,12 +1,12 @@
 # Mac Dot Files
 
-My macOS configs, themed with Osaka Jade from [Omarchy](https://omarchy.org) across the terminal, prompt, editor, notes and browser.
+My macOS configs. Ghostty and PhpStorm use the Light Lite theme. Zed, the prompt, Obsidian and the browser still carry Osaka Jade from [Omarchy](https://omarchy.org).
 
 ## What's in here
 
 | Package | What it configures |
 | --- | --- |
-| `ghostty` | Ghostty terminal, with the Osaka Jade theme and the Catppuccin themes |
+| `ghostty` | Ghostty terminal, using the Light Lite theme (Osaka Jade and the Catppuccin themes are kept too) |
 | `zed` | Zed settings, keymap, Osaka Jade theme and the formatter scripts it calls |
 | `starship` | Starship prompt, with an Osaka Jade palette (the Catppuccin palettes are kept too) |
 | `zsh` | Shell startup files |
@@ -19,7 +19,7 @@ Each package mirrors the home folder, so `zed/.config/zed/settings.json` lives a
 
 `phpstorm/settings` holds the PhpStorm keymap, code style, editor, window layout (Project files on the right, tool window bars shown) and default project settings (Pint on save, PHPStan), and `phpstorm/plugins.txt` lists the installed plugins. PhpStorm replaces its files when it saves, which breaks symlinks, so these are copied rather than stowed. Run `./phpstorm/sync.sh pull` to copy the IDE's current settings into the repo, or quit PhpStorm and run `./phpstorm/sync.sh push` to copy them back. The script uses the PhpStorm EAP config folder when there is one and the stable release otherwise. It only touches the files it lists, so the license key, recent projects and SSH configs stay out of the repo.
 
-The PhpStorm theme lives in its own repo, [osaka-jade-phpstorm](https://github.com/joshdonnell/osaka-jade-phpstorm). The settings here expect it to be installed.
+PhpStorm uses the Light Lite colour scheme (the `Light_Lite` plugin from [brendt/phpstorm-light-lite-theme](https://github.com/brendt/phpstorm-light-lite-theme)) with the built in light UI theme. The Ghostty Light Lite theme copies its colours. The old Osaka Jade theme lives in its own repo, [osaka-jade-phpstorm](https://github.com/joshdonnell/osaka-jade-phpstorm).
 
 `macos/defaults.sh` gives Helium the Osaka Jade background through Chromium's `BrowserThemeColor` policy.
 
@@ -38,7 +38,7 @@ A few things need doing by hand:
 1. Copy `obsidian/Verso Osaka Jade` into the vault's `.obsidian/themes` folder and pick it in Obsidian under Settings > Appearance.
 2. Set the wallpaper to Omarchy's Osaka Jade "glowing city" in System Settings > Wallpaper. Wallpapers aren't part of this repo.
 3. Restart Helium so it picks up the theme colour.
-4. Install the PhpStorm theme by cloning [osaka-jade-phpstorm](https://github.com/joshdonnell/osaka-jade-phpstorm) and running its `./build.sh`, then restart PhpStorm.
+4. Install the Light Lite plugin from the JetBrains Marketplace (it's listed in `phpstorm/plugins.txt`), then restart PhpStorm.
 
 ## Notes
 

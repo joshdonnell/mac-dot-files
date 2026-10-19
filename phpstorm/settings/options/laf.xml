@@ -1,5 +1,5 @@
 <application>
   <component name="LafManager">
-    <laf themeId="uk.co.joshdonnell.osaka-jade" />
+    <laf themeId="ExperimentalLightWithLightHeader" />
   </component>
 </application>

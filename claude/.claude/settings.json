@@ -127,5 +127,6 @@
       "**Trusted repo**: /Users/josh/sites (no git remotes configured — working directory only; repo currently has 0 tracked files)",
       "**Org-specific CLIs**: None configured"
     ]
-  }
+  },
+  "theme": "auto"
 }
