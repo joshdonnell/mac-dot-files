@@ -1,7 +1,0 @@
-font-family = DankMono Nerd Font Mono
-theme = light-lite.conf
-term = xterm-256color
-working-directory = /Users/josh/sites
-cursor-style = block
-shell-integration-features = no-cursor
-unfocused-split-opacity = 1

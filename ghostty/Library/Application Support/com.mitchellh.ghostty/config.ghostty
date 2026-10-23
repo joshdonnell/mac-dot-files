@@ -1,0 +1,7 @@
+font-family = DankMono Nerd Font Mono
+theme = light:light-lite.conf,dark:osaka-jade.conf
+working-directory = ~/sites
+cursor-style = block
+shell-integration-features = no-cursor,ssh-env,ssh-terminfo
+unfocused-split-opacity = 1
+keybind = super+e=unbind

@@ -1,23 +1,25 @@
 # Mac Dot Files
 
-My macOS configs. Ghostty and PhpStorm use the Light Lite theme. Zed, the prompt, Obsidian and the browser still carry Osaka Jade from [Omarchy](https://omarchy.org).
+My macOS configs. PhpStorm uses the Light Lite theme, and Ghostty follows the system appearance (Light Lite in light mode, Osaka Jade in dark mode). Zed, the prompt and the browser still carry Osaka Jade from [Omarchy](https://omarchy.org).
 
 ## What's in here
 
 | Package | What it configures |
 | --- | --- |
-| `ghostty` | Ghostty terminal, using the Light Lite theme (Osaka Jade and the Catppuccin themes are kept too) |
+| `ghostty` | Ghostty terminal, switching between Light Lite and Osaka Jade with the system appearance (the Catppuccin themes are kept too) |
 | `zed` | Zed settings, keymap, Osaka Jade theme and the formatter scripts it calls |
 | `starship` | Starship prompt, with an Osaka Jade palette (the Catppuccin palettes are kept too) |
 | `zsh` | Shell startup files |
-| `git` | Git config and global ignore |
+| `git` | Global git ignore |
 | `claude` | Claude instructions, settings, agents and the list of installed skills |
+| `herdr` | [herdr](https://herdr.dev) terminal workspace config: theme, `ctrl+s` prefix, lazygit popup on `prefix+d` and the git sidebar on `prefix+i` |
+| `lazygit` | Lazygit config (delta diffs, Osaka Jade and Light Lite colours), used as the herdr popup |
+| `nvim` | LazyVim setup with intelephense and the Laravel language server, Pint on save, oxfmt and oxlint (Prettier and ESLint as fallbacks) and a VS Code style explorer |
+| `composer` | Global Composer packages, currently just `laravel/lsp` for Neovim |
 
 Each package mirrors the home folder, so `zed/.config/zed/settings.json` lives at `~/.config/zed/settings.json`. [GNU Stow](https://www.gnu.org/software/stow/) symlinks them into place.
 
-`obsidian/Verso Osaka Jade` is the [Verso](https://fabrizio.so) Obsidian theme by Fabrizio Rinaldi, with Omarchy's Osaka Jade colours added for dark mode. It isn't stowed, because it lives inside a vault.
-
-`phpstorm/settings` holds the PhpStorm keymap, code style, editor, window layout (Project files on the right, tool window bars shown) and default project settings (Pint on save, PHPStan), and `phpstorm/plugins.txt` lists the installed plugins. PhpStorm replaces its files when it saves, which breaks symlinks, so these are copied rather than stowed. Run `./phpstorm/sync.sh pull` to copy the IDE's current settings into the repo, or quit PhpStorm and run `./phpstorm/sync.sh push` to copy them back. The script uses the PhpStorm EAP config folder when there is one and the stable release otherwise. It only touches the files it lists, so the license key, recent projects and SSH configs stay out of the repo.
+`phpstorm/settings` holds the PhpStorm keymap, code style, editor, window layout (Project files on the right, tool window bars shown) and default project settings (Pint on save, PHPStan, oxlint and oxfmt on save), and `phpstorm/plugins.txt` lists the installed plugins. PhpStorm replaces its files when it saves, which breaks symlinks, so these are copied rather than stowed. Run `./phpstorm/sync.sh pull` to copy the IDE's current settings into the repo, or quit PhpStorm and run `./phpstorm/sync.sh push` to copy them back. The script uses the PhpStorm EAP config folder when there is one and the stable release otherwise. It only touches the files it lists, so the license key, recent projects and SSH configs stay out of the repo.
 
 PhpStorm uses the Light Lite colour scheme (the `Light_Lite` plugin from [brendt/phpstorm-light-lite-theme](https://github.com/brendt/phpstorm-light-lite-theme)) with the built in light UI theme. The Ghostty Light Lite theme copies its colours. The old Osaka Jade theme lives in its own repo, [osaka-jade-phpstorm](https://github.com/joshdonnell/osaka-jade-phpstorm).
 
@@ -31,16 +33,19 @@ cd ~/mac-dot-files
 ./install.sh
 ```
 
-The install script runs `brew bundle`, links every package with Stow and applies the Helium theme. Any config already on the machine is adopted into the repo, so run `git diff` afterwards to see what differs.
+The install script runs `brew bundle`, links every package with Stow, installs the global Composer packages, sets up the herdr agent integrations and the [herdr-git](https://github.com/shire-studio/herdr-git) plugin, installs the Claude plugins and applies the Helium theme. Any config already on the machine is adopted into the repo, so run `git diff` afterwards to see what differs.
 
 A few things need doing by hand:
 
-1. Copy `obsidian/Verso Osaka Jade` into the vault's `.obsidian/themes` folder and pick it in Obsidian under Settings > Appearance.
+1. Create `~/.gitconfig` with the name, email and signing setup for that machine. It isn't in the repo because it differs between machines.
 2. Set the wallpaper to Omarchy's Osaka Jade "glowing city" in System Settings > Wallpaper. Wallpapers aren't part of this repo.
 3. Restart Helium so it picks up the theme colour.
 4. Install the Light Lite plugin from the JetBrains Marketplace (it's listed in `phpstorm/plugins.txt`), then restart PhpStorm.
 
 ## Notes
 
-* Skills are not copied into the repo since most are third party. `claude/.agents/.skill-lock.json` lists the ones installed with `npx skills` and the repo each came from.
+* Skills are not copied into the repo since most are third party. `claude/.agents/.skill-lock.json` lists the ones installed with `npx skills` and the repo each came from. Matt Pocock's skills come from the `mattpocock-skills` Claude plugin instead, so don't install them with `npx skills`.
+* herdr owns `~/.claude/hooks/herdr-agent-state.sh` and its own skill, so those come from `herdr integration install` rather than the repo. Plugin checkouts and session files stay out of the repo too.
+* Neovim's `lazy-lock.json` is committed so plugin versions match across machines. LazyVim installs the language servers through Mason on first launch.
+* Paths use `$HOME` rather than a username so the same files work on every machine.
 * The Zed keymap was generated by a script that isn't in this repo, so edit `keymap.json` directly.

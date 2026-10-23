@@ -1,94 +1,73 @@
-
-# Kiro CLI pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
-
-
-
-# Q pre block. Keep at the top of this file.
-export PATH=~/.composer/vendor/bin:$PATH
-export NVM_DIR="$HOME/.nvm"
-  . "/opt/homebrew/opt/nvm/nvm.sh"
-
 eval "$(starship init zsh)"
 
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
+# Completions (Docker CLI and anything Homebrew adds)
+[ -d "$HOME/.docker/completions" ] && fpath=("$HOME/.docker/completions" $fpath)
+autoload -Uz compinit && compinit
+
+# nvm, from Homebrew or the install script
+export NVM_DIR="$HOME/.nvm"
+if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
+  . "/opt/homebrew/opt/nvm/nvm.sh"
+elif [ -s "$NVM_DIR/nvm.sh" ]; then
+  . "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+fi
+
 # pnpm
-export PNPM_HOME="/Users/josh/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-
-# Q post block. Keep at the bottom of this file.
-
-# Herd injected PHP binary.
-export PATH="/Users/josh/Library/Application Support/Herd/bin/":$PATH
-
-
-# Herd injected PHP 8.4 configuration.
-export HERD_PHP_84_INI_SCAN_DIR="/Users/josh/Library/Application Support/Herd/config/php/84/"
-
-
-# Herd injected PHP 8.3 configuration.
-export HERD_PHP_83_INI_SCAN_DIR="/Users/josh/Library/Application Support/Herd/config/php/83/"
-
-
-# Herd injected PHP 8.2 configuration.
-export HERD_PHP_82_INI_SCAN_DIR="/Users/josh/Library/Application Support/Herd/config/php/82/"
-
-
-# Herd injected PHP 8.0 configuration.
-export HERD_PHP_80_INI_SCAN_DIR="/Users/josh/Library/Application Support/Herd/config/php/80/"
-
-
-# Herd injected PHP 7.4 configuration.
-export HERD_PHP_74_INI_SCAN_DIR="/Users/josh/Library/Application Support/Herd/config/php/74/"
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/josh/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
-
-
-# Herd injected PHP 8.5 configuration.
-export HERD_PHP_85_INI_SCAN_DIR="/Users/josh/Library/Application Support/Herd/config/php/85/"
-# Herd injected PHP 8.1 configuration.
-export HERD_PHP_81_INI_SCAN_DIR="/Users/josh/Library/Application Support/Herd/config/php/81/"
-
-alias pa="php artisan"
-alias pest="./vendor/bin/pest --parallel"
-alias phpstan="./vendor/bin/phpstan --memory-limit='2G'"
-
-
-# Herd injected PHP 8.5 configuration.
-export HERD_PHP_85_INI_SCAN_DIR="/Users/josh/Library/Application Support/Herd/config/php/85/"
-
 # bun completions
-[ -s "/Users/josh/.bun/_bun" ] && source "/Users/josh/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# Herd injected PHP binary.
+export PATH="$HOME/Library/Application Support/Herd/bin/":$PATH
 
+# Herd injected PHP configuration.
+export HERD_PHP_74_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/74/"
+export HERD_PHP_80_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/80/"
+export HERD_PHP_81_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/81/"
+export HERD_PHP_82_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/82/"
+export HERD_PHP_83_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/83/"
+export HERD_PHP_84_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/84/"
+export HERD_PHP_85_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/85/"
+export HERD_PHP_86_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/86"
 
-# Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"
+# DBngin MySQL client (mysql/mysqldump for native tests)
+export PATH="/Users/Shared/DBngin/mysql/8.0.33/bin:$PATH"
 
-
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
-
-
-# Herd injected PHP 8.6 configuration.
-export HERD_PHP_86_INI_SCAN_DIR="/Users/josh/Library/Application Support/Herd/config/php/86"
 export PATH="$HOME/.local/bin:$PATH"
 
-# Lerd
-export PATH="/Users/josh/.local/share/lerd/bin:$PATH"
+alias pa="php artisan"
+alias pest="./vendor/bin/pest --parallel"
+alias phpstan="./vendor/bin/phpstan --memory-limit='2G'"
+alias pamf="pa migrate:fresh --seed && pa dev:seed --fresh"
 
-# Lerd completions
-fpath=(/Users/josh/.local/share/zsh/site-functions $fpath)
-autoload -Uz compinit && compinit
+# Terminal tools
+# ansi follows the Ghostty palette in both light and dark mode.
+export BAT_THEME="ansi"
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --cycle'
+
+if [[ -t 0 && -t 1 ]] && command -v fzf >/dev/null; then
+  source <(fzf --zsh)
+fi
+command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
+
+alias ls="eza"
+alias ll="eza -la"
+alias tree="eza --tree"
+alias cat="bat"

@@ -1,17 +1,19 @@
 Antlers Language Support
 Catppuccin Icons
 Catppuccin Theme
-dotenv
+clouds-docker-impl
 ej
+fullLine
 IntellijAlpine
 laravel-idea
 Light_Lite.jar
-mcpserver
 ml-llm
 osaka-jade-theme.jar
 oxc-intellij-plugin
 PHP Annotations
+remoteRun
+sticky-project-view
 vcs-hg
 vcs-perforce
 vcs-svn
-vitejs
+webDeployment

@@ -1,3 +1,4 @@
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"
+[ -f "$HOME/.vite-plus/env" ] && . "$HOME/.vite-plus/env"

@@ -1,5 +1,2 @@
 com.github.catppuccin.jetbrains
-com.intellij.ja
-com.intellij.ko
-com.intellij.zh
 org.jetbrains.junie

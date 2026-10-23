@@ -3,13 +3,7 @@
     <defaultProject>
       <component name="ComposerSettings">
         <execution>
-          <execution>
-            <execution>
-              <execution>
-                <execution />
-              </execution>
-            </execution>
-          </execution>
+          <execution />
         </execution>
       </component>
       <component name="FormatOnSaveOptions">
@@ -17,15 +11,22 @@
         <option name="myAllFileTypesSelected" value="false" />
         <option name="mySelectedFileTypes">
           <set>
-            <option value="Antlers" />
+            <option value="Angular2Html" />
             <option value="Blade" />
             <option value="CSS" />
+            <option value="CassandraQL" />
+            <option value="Cucumber" />
             <option value="DTD" />
             <option value="EditorConfig" />
             <option value="Flow" />
             <option value="HTML" />
+            <option value="HTTP Request" />
+            <option value="HiveQL" />
             <option value="Ini" />
             <option value="JSHint" />
+            <option value="JSON" />
+            <option value="JSON-lines" />
+            <option value="JSON5" />
             <option value="JSX" />
             <option value="JavaScript" />
             <option value="Less" />
@@ -33,12 +34,19 @@
             <option value="PHP" />
             <option value="PostCSS" />
             <option value="RNG Compact" />
+            <option value="Redis" />
+            <option value="SARIF" />
+            <option value="SCSS" />
+            <option value="SQL" />
             <option value="SVG" />
+            <option value="Sass" />
             <option value="Shell Script" />
+            <option value="Smarty" />
             <option value="SourceMap" />
             <option value="Twig" />
             <option value="TypeScript" />
             <option value="TypeScript JSX" />
+            <option value="Vue.js" />
             <option value="XHTML" />
             <option value="XML" />
             <option value="YAML" />
@@ -54,14 +62,19 @@
         </profile>
         <version value="1.0" />
       </component>
+      <component name="JunieProject">{}</component>
       <component name="LaravelPintOptionsConfiguration">
         <option name="pintJsonPath" value="pint.json" />
       </component>
       <component name="LaravelPintProjectConfiguration">
         <option name="selectedConfigurationId" value="Local" />
       </component>
+      <component name="OptimizeOnSaveOptions">
+        <option name="myRunOnSave" value="true" />
+      </component>
       <component name="OxcSettings">
         <option name="fixAllOnSave" value="true" />
+        <option name="runTrigger" value="ON_SAVE" />
       </component>
       <component name="OxfmtSettings">
         <option name="fixAllOnSave" value="true" />
@@ -77,30 +90,32 @@
       <component name="PhpStanProjectConfiguration">
         <option name="selectedConfigurationId" value="Local" />
       </component>
-      <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "node.js.selected.package.eslint": "(autodetect)",
-    "settings.editor.selected.configurable": "advanced.settings"
+      <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion.inline&quot;
   }
-}]]></component>
+}</component>
       <component name="TaskManager">
         <task active="true" id="Default" summary="Default task">
-          <created>1782974988986</created>
+          <created>1774901386308</created>
           <option name="number" value="Default" />
           <option name="presentableId" value="Default" />
-          <updated>1782974988986</updated>
-          <workItem from="1782974988987" duration="200000" />
+          <updated>1774901386308</updated>
+          <workItem from="1774901437722" duration="199000" />
         </task>
         <servers />
       </component>
       <component name="TimeTrackingManager">
-        <option name="totallyTimeSpent" value="200000" />
+        <option name="totallyTimeSpent" value="199000" />
       </component>
       <component name="WindowStateProjectService">
-        <state x="409" y="166" key="SettingsEditor" timestamp="1790149108438">
+        <state x="498" y="284" key="SettingsEditor" timestamp="1778107289949">
           <screen x="0" y="39" width="1800" height="1130" />
         </state>
-        <state x="409" y="166" key="SettingsEditor/0.39.1800.1130" timestamp="1790149108438" />
+        <state x="498" y="284" key="SettingsEditor/0.39.1800.1130" timestamp="1778107289949" />
+        <state x="-2631" y="-401" key="SettingsEditor/0.39.1800.1130/-4096.-812.4096.1698" timestamp="1774901605804" />
       </component>
     </defaultProject>
   </component>

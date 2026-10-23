@@ -16,6 +16,3 @@ When working with Laravel/PHP projects, always use the php-guidelines-from-spati
 For questions about GitHub, use the gh tool
 Never mention Claude Code in PR descriptions, PR comments, or issue comments
 Do not include a "Test plan" section in PR descriptions
-
-## Grilling / interviews
-When grilling me or asking me to make a series of decisions, ask one question at a time using the AskUserQuestion multi-choice selector (recommended option first, labelled "(Recommended)"). Never dump a numbered round of questions as text.

@@ -107,7 +107,7 @@
       "language_servers": ["phpantom", "laravel", "!intelephense", "!phpactor", "!phptools", "..."],
       "formatter": {
         "external": {
-          "command": "/Users/josh/.local/bin/php-format",
+          "command": "php-format",
           "arguments": ["{buffer_path}"]
         }
       }
@@ -115,7 +115,7 @@
     "CSS": {
       "formatter": {
         "external": {
-          "command": "/Users/josh/.local/bin/js-format",
+          "command": "js-format",
           "arguments": ["{buffer_path}"]
         }
       }
@@ -123,7 +123,7 @@
     "HTML": {
       "formatter": {
         "external": {
-          "command": "/Users/josh/.local/bin/js-format",
+          "command": "js-format",
           "arguments": ["{buffer_path}"]
         }
       }
@@ -131,7 +131,7 @@
     "JavaScript": {
       "formatter": {
         "external": {
-          "command": "/Users/josh/.local/bin/js-format",
+          "command": "js-format",
           "arguments": ["{buffer_path}"]
         }
       }
@@ -139,7 +139,7 @@
     "JSON": {
       "formatter": {
         "external": {
-          "command": "/Users/josh/.local/bin/js-format",
+          "command": "js-format",
           "arguments": ["{buffer_path}"]
         }
       }
@@ -147,7 +147,7 @@
     "JSONC": {
       "formatter": {
         "external": {
-          "command": "/Users/josh/.local/bin/js-format",
+          "command": "js-format",
           "arguments": ["{buffer_path}"]
         }
       }
@@ -155,7 +155,7 @@
     "Markdown": {
       "formatter": {
         "external": {
-          "command": "/Users/josh/.local/bin/js-format",
+          "command": "js-format",
           "arguments": ["{buffer_path}"]
         }
       }
@@ -163,7 +163,7 @@
     "TypeScript": {
       "formatter": {
         "external": {
-          "command": "/Users/josh/.local/bin/js-format",
+          "command": "js-format",
           "arguments": ["{buffer_path}"]
         }
       }
@@ -171,7 +171,7 @@
     "TSX": {
       "formatter": {
         "external": {
-          "command": "/Users/josh/.local/bin/js-format",
+          "command": "js-format",
           "arguments": ["{buffer_path}"]
         }
       }
@@ -179,7 +179,7 @@
     "Vue.js": {
       "formatter": {
         "external": {
-          "command": "/Users/josh/.local/bin/js-format",
+          "command": "js-format",
           "arguments": ["{buffer_path}"]
         }
       }
@@ -187,7 +187,7 @@
     "YAML": {
       "formatter": {
         "external": {
-          "command": "/Users/josh/.local/bin/js-format",
+          "command": "js-format",
           "arguments": ["{buffer_path}"]
         }
       }

@@ -38,8 +38,13 @@ FILES=(
   options/window.layouts.xml
 )
 
-IDE_DIR=$(ls -d "$HOME/Library/Application Support/JetBrains/PhpStormLight20"* 2>/dev/null | sort -V | tail -1)
-[ -z "$IDE_DIR" ] && IDE_DIR=$(ls -d "$HOME/Library/Application Support/JetBrains/PhpStorm20"* 2>/dev/null | sort -V | tail -1)
+# Only match real version folders, so backups like PhpStormLight2026.3-backup are skipped.
+newest() {
+  ls -d "$HOME/Library/Application Support/JetBrains/$1"20* 2>/dev/null | grep -E "/$1[0-9]{4}\.[0-9]+$" | sort -V | tail -1
+}
+
+IDE_DIR=$(newest PhpStormLight)
+[ -z "$IDE_DIR" ] && IDE_DIR=$(newest PhpStorm)
 
 if [ -z "$IDE_DIR" ]; then
   echo "No PhpStorm config folder found. Open PhpStorm once first."

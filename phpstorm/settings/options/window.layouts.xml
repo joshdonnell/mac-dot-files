@@ -4,53 +4,19 @@
     "Custom": {
       "v2": [
         {
-          "id": "Project",
-          "order": 0,
-          "contentUiType": "COMBO",
-          "weight": 0.25,
-          "anchor": "RIGHT"
-        },
-        {
           "id": "Commit",
-          "order": 1,
+          "order": 0,
           "weight": 0.25
         },
         {
-          "id": "Structure",
-          "order": 2,
+          "id": "Pull Requests",
           "weight": 0.25,
-          "isSplit": true
+          "order": 1
         },
         {
-          "id": "Notifications",
-          "order": 1,
-          "anchor": "RIGHT",
-          "contentUiType": "COMBO",
-          "weight": 0.25
-        },
-        {
-          "id": "AIAssistant",
-          "order": 2,
-          "anchor": "RIGHT",
-          "weight": 0.25
-        },
-        {
-          "id": "Database",
-          "order": 3,
-          "anchor": "RIGHT",
-          "weight": 0.25
-        },
-        {
-          "id": "Gradle",
-          "order": 4,
-          "anchor": "RIGHT",
-          "weight": 0.25
-        },
-        {
-          "id": "Maven",
-          "order": 5,
-          "anchor": "RIGHT",
-          "weight": 0.25
+          "id": "air.threads",
+          "weight": 0.25,
+          "order": 2
         },
         {
           "id": "Version Control",
@@ -76,6 +42,51 @@
           "id": "Services",
           "order": 4,
           "anchor": "BOTTOM"
+        },
+        {
+          "id": "Project",
+          "order": 0,
+          "contentUiType": "COMBO",
+          "weight": 0.25,
+          "anchor": "RIGHT"
+        },
+        {
+          "id": "Structure",
+          "order": 1,
+          "weight": 0.25,
+          "anchor": "RIGHT",
+          "isSplit": true
+        },
+        {
+          "id": "Notifications",
+          "order": 2,
+          "anchor": "RIGHT",
+          "contentUiType": "COMBO",
+          "weight": 0.25
+        },
+        {
+          "id": "AIAssistant",
+          "order": 3,
+          "anchor": "RIGHT",
+          "weight": 0.25
+        },
+        {
+          "id": "Database",
+          "order": 4,
+          "anchor": "RIGHT",
+          "weight": 0.25
+        },
+        {
+          "id": "Gradle",
+          "order": 5,
+          "anchor": "RIGHT",
+          "weight": 0.25
+        },
+        {
+          "id": "Maven",
+          "order": 6,
+          "anchor": "RIGHT",
+          "weight": 0.25
         }
       ]
     }
