@@ -28,14 +28,10 @@ echo "Setting up herdr..."
 herdr integration install claude
 herdr integration install codex
 herdr integration install opencode
-herdr plugin install shire-studio/herdr-git --yes || true
 
 echo "Installing Claude plugins..."
 claude plugin marketplace add pbakaus/impeccable || true
 claude plugin install mattpocock-skills@claude-plugins-official
 claude plugin install impeccable@impeccable
-
-echo "Applying macOS settings..."
-./macos/defaults.sh
 
 echo "Done."

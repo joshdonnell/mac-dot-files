@@ -1,6 +1,6 @@
 # Mac Dot Files
 
-My macOS configs. PhpStorm uses the Light Lite theme, and Ghostty follows the system appearance (Light Lite in light mode, Osaka Jade in dark mode). Zed, the prompt and the browser still carry Osaka Jade from [Omarchy](https://omarchy.org).
+My macOS configs. PhpStorm uses the Light Lite theme, and Ghostty follows the system appearance (Light Lite in light mode, Osaka Jade in dark mode). Zed and the prompt still carry Osaka Jade from [Omarchy](https://omarchy.org).
 
 ## What's in here
 
@@ -12,7 +12,7 @@ My macOS configs. PhpStorm uses the Light Lite theme, and Ghostty follows the sy
 | `zsh` | Shell startup files |
 | `git` | Global git ignore |
 | `claude` | Claude instructions, settings, agents and the list of installed skills |
-| `herdr` | [herdr](https://herdr.dev) terminal workspace config: theme, `ctrl+s` prefix, lazygit popup on `prefix+d` and the git sidebar on `prefix+i` |
+| `herdr` | [herdr](https://herdr.dev) terminal workspace config: theme, `ctrl+s` prefix, lazygit popup on `prefix+d` |
 | `lazygit` | Lazygit config (delta diffs, Osaka Jade and Light Lite colours), used as the herdr popup |
 | `nvim` | LazyVim setup with intelephense and the Laravel language server, Pint on save, oxfmt and oxlint (Prettier and ESLint as fallbacks) and a VS Code style explorer |
 | `composer` | Global Composer packages, currently just `laravel/lsp` for Neovim |
@@ -23,8 +23,6 @@ Each package mirrors the home folder, so `zed/.config/zed/settings.json` lives a
 
 PhpStorm uses the Light Lite colour scheme (the `Light_Lite` plugin from [brendt/phpstorm-light-lite-theme](https://github.com/brendt/phpstorm-light-lite-theme)) with the built in light UI theme. The Ghostty Light Lite theme copies its colours. The old Osaka Jade theme lives in its own repo, [osaka-jade-phpstorm](https://github.com/joshdonnell/osaka-jade-phpstorm).
 
-`macos/defaults.sh` gives Helium the Osaka Jade background through Chromium's `BrowserThemeColor` policy.
-
 ## Install
 
 ```bash
@@ -33,14 +31,13 @@ cd ~/mac-dot-files
 ./install.sh
 ```
 
-The install script runs `brew bundle`, links every package with Stow, installs the global Composer packages, sets up the herdr agent integrations and the [herdr-git](https://github.com/shire-studio/herdr-git) plugin, installs the Claude plugins and applies the Helium theme. Any config already on the machine is adopted into the repo, so run `git diff` afterwards to see what differs.
+The install script runs `brew bundle`, links every package with Stow, installs the global Composer packages, sets up the herdr agent integrations and installs the Claude plugins. Any config already on the machine is adopted into the repo, so run `git diff` afterwards to see what differs.
 
 A few things need doing by hand:
 
 1. Create `~/.gitconfig` with the name, email and signing setup for that machine. It isn't in the repo because it differs between machines.
 2. Set the wallpaper to Omarchy's Osaka Jade "glowing city" in System Settings > Wallpaper. Wallpapers aren't part of this repo.
-3. Restart Helium so it picks up the theme colour.
-4. Install the Light Lite plugin from the JetBrains Marketplace (it's listed in `phpstorm/plugins.txt`), then restart PhpStorm.
+3. Install the Light Lite plugin from the JetBrains Marketplace (it's listed in `phpstorm/plugins.txt`), then restart PhpStorm.
 
 ## Notes
 

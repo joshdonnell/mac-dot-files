@@ -13,7 +13,6 @@ brew "lazygit"
 brew "neovim"
 brew "herdr"
 brew "composer"
-brew "rust"
 
 # Apps
 cask "ghostty"

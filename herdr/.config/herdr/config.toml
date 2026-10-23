@@ -62,13 +62,6 @@ description = "Git status"
 width = "90%"
 height = "85%"
 
-# shire-studio/herdr-git: branch, PR, issues and Actions sidebar on the right.
-[[keys.command]]
-key = "prefix+i"
-type = "plugin_action"
-command = "shire-studio.git.toggle"
-description = "Toggle git sidebar"
-
 [ui]
 agent_panel_sort = "priority"
 prompt_new_tab_name = false
