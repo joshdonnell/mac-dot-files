@@ -39,6 +39,20 @@ A few things need doing by hand:
 2. Set the wallpaper to Omarchy's Osaka Jade "glowing city" in System Settings > Wallpaper. Wallpapers aren't part of this repo.
 3. Install the Light Lite plugin from the JetBrains Marketplace (it's listed in `phpstorm/plugins.txt`), then restart PhpStorm.
 
+## Keeping machines in sync
+
+Stowed configs are symlinks into the repo, so changing a setting on one Mac changes the repo. To share it, check `git diff`, then commit and push. For PhpStorm, run `./phpstorm/sync.sh pull` before committing.
+
+On the other Mac, run:
+
+```bash
+./update.sh
+```
+
+It pulls, relinks every package (so new files get linked), runs `brew bundle` and `composer global install`, reloads herdr and pushes the PhpStorm settings. It stops if the repo has uncommitted changes, because apps sometimes write their own settings into these files. Look at those changes, then commit or discard them before updating. PhpStorm is skipped while it's running.
+
+New packages go in `packages.sh`, which both scripts read.
+
 ## Notes
 
 * Skills are not copied into the repo since most are third party. `claude/.agents/.skill-lock.json` lists the ones installed with `npx skills` and the repo each came from. Matt Pocock's skills come from the `mattpocock-skills` Claude plugin instead, so don't install them with `npx skills`.

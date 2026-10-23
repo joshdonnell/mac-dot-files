@@ -1,2 +1,7 @@
 .DS_Store
 .zcompdump*
+
+# Composer writes these into the stowed folder
+composer/.config/composer/.htaccess
+composer/.config/composer/cache/
+composer/.config/composer/vendor/

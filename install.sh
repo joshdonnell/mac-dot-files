@@ -7,7 +7,7 @@ set -e
 
 cd "$(dirname "$0")"
 
-PACKAGES=(ghostty zed starship zsh git claude nvim lazygit herdr composer)
+source packages.sh
 
 if ! command -v brew >/dev/null 2>&1; then
   echo "Install Homebrew first: https://brew.sh"
