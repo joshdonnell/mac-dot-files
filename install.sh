@@ -30,8 +30,16 @@ herdr integration install codex
 herdr integration install opencode
 
 echo "Installing Claude plugins..."
-claude plugin marketplace add pbakaus/impeccable || true
-claude plugin install mattpocock-skills@claude-plugins-official
-claude plugin install impeccable@impeccable
+# Marketplaces are also declared in claude/.claude/settings.json, so Claude installs missing plugins on start.
+# Installing them here means they work in the first session too.
+for marketplace in pbakaus/impeccable jarrodwatts/claude-hud laravel/agent-skills vercel-labs/agent-browser; do
+  claude plugin marketplace add "$marketplace" || true
+done
+for plugin in \
+  mattpocock-skills@claude-plugins-official superpowers@claude-plugins-official \
+  frontend-design@claude-plugins-official stripe@claude-plugins-official swift-lsp@claude-plugins-official \
+  impeccable@impeccable claude-hud@claude-hud laravel@laravel agent-browser@agent-browser; do
+  claude plugin install "$plugin"
+done
 
 echo "Done."
