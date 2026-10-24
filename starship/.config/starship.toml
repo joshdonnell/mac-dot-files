@@ -1,6 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
+${env_var.PROMPT_HOST}\
 $directory\
 [](bg:leaf fg:jade)\
 $git_branch\
@@ -45,6 +46,11 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+
+# Machine label. Only shown where PROMPT_HOST is set (the devbox zshenv sets it), so laptops are unchanged.
+[env_var.PROMPT_HOST]
+style = "bg:red fg:base"
+format = '[ 󰒋 $env_value ]($style)[](fg:red bg:jade)'
 
 [username]
 show_always = true
