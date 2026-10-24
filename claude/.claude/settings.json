@@ -152,7 +152,7 @@
       "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
       "### User-specific",
       "**Primary use of Claude Code**: software development",
-      "**Trusted repo**: /Users/josh/sites (no git remotes configured — working directory only; repo currently has 0 tracked files)",
+      "**Trusted repo**: ~/sites on the laptops and ~/code on the devbox (no git remotes configured — working directory only; repo currently has 0 tracked files)",
       "**Org-specific CLIs**: None configured"
     ]
   },
