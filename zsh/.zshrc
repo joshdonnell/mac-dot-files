@@ -56,6 +56,9 @@ alias pest="./vendor/bin/pest --parallel"
 alias phpstan="./vendor/bin/phpstan --memory-limit='2G'"
 alias pamf="pa migrate:fresh --seed && pa dev:seed --fresh"
 
+# Attach to the devbox herdr with its keybindings, since local custom commands (lazygit on prefix+d) aren't sent over --remote.
+alias devbox="herdr --remote devbox@devbox --remote-keybindings server"
+
 # Terminal tools
 # ansi follows the Ghostty palette in both light and dark mode.
 export BAT_THEME="ansi"
