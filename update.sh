@@ -19,7 +19,13 @@ echo "Pulling..."
 git pull --ff-only
 
 echo "Linking configs..."
-stow --restow --target="$HOME" "${PACKAGES[@]}"
+# herdr keeps logs, sessions and plugins.json next to its config, so link its files rather than the folder.
+OTHER_PACKAGES=()
+for PACKAGE in "${PACKAGES[@]}"; do
+  [ "$PACKAGE" = herdr ] || OTHER_PACKAGES+=("$PACKAGE")
+done
+stow --restow --target="$HOME" "${OTHER_PACKAGES[@]}"
+stow --restow --target="$HOME" --no-folding herdr
 
 echo "Updating Homebrew packages..."
 brew bundle --file=Brewfile
