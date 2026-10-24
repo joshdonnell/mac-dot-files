@@ -19,7 +19,13 @@ brew bundle --file=Brewfile
 
 echo "Linking configs..."
 mkdir -p "$HOME/.config" "$HOME/.local/bin" "$HOME/Library/Application Support/com.mitchellh.ghostty" "$HOME/Library/Application Support/lazygit"
-stow --adopt --target="$HOME" "${PACKAGES[@]}"
+# herdr keeps logs, sessions and plugins.json next to its config, so link its files rather than the folder.
+OTHER_PACKAGES=()
+for PACKAGE in "${PACKAGES[@]}"; do
+  [ "$PACKAGE" = herdr ] || OTHER_PACKAGES+=("$PACKAGE")
+done
+stow --adopt --target="$HOME" "${OTHER_PACKAGES[@]}"
+stow --adopt --target="$HOME" --no-folding herdr
 
 echo "Installing the Laravel language server..."
 COMPOSER_HOME="$HOME/.config/composer" composer global install
