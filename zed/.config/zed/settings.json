@@ -10,8 +10,8 @@
     }
   },
   "base_keymap": "VSCode",
-  "theme": "Osaka Jade",
-  "icon_theme": "Catppuccin Frappé",
+  "theme": "One Light",
+  "icon_theme": "Catppuccin Latte",
   "auto_install_extensions": {
     "catppuccin": true,
     "catppuccin-icons": true,
@@ -86,7 +86,9 @@
     "button": false
   },
   "agent": {
-    "sidebar_side": "right",
+    "threads_sidebar": {
+      "position": "right"
+    },
     "button": false
   },
   "debugger": {
