@@ -12,7 +12,7 @@ My macOS configs. PhpStorm uses the Light Lite theme, and Ghostty follows the sy
 | `zsh` | Shell startup files |
 | `git` | Global git ignore |
 | `claude` | Claude instructions, settings, agents and the list of installed skills |
-| `herdr` | [herdr](https://herdr.dev) terminal workspace config: theme, `ctrl+s` prefix, lazygit popup on `prefix+d` |
+| `herdr` | [herdr](https://herdr.dev) terminal workspace config: theme, `ctrl+s` prefix, lazygit popup on `prefix+d`, workspace popup on `prefix+a` |
 | `lazygit` | Lazygit config (delta diffs, Osaka Jade and Light Lite colours), used as the herdr popup |
 | `nvim` | LazyVim setup with intelephense and the Laravel language server, Pint on save, oxfmt and oxlint (Prettier and ESLint as fallbacks) and a VS Code style explorer |
 | `composer` | Global Composer packages, currently just `laravel/lsp` for Neovim |
@@ -31,7 +31,7 @@ cd ~/mac-dot-files
 ./install.sh
 ```
 
-The install script runs `brew bundle`, links every package with Stow, installs the global Composer packages, sets up the herdr agent integrations and installs the Claude plugins. Any config already on the machine is adopted into the repo, so run `git diff` afterwards to see what differs.
+The install script runs `brew bundle`, links every package with Stow, installs the global Composer packages, sets up the herdr agent integrations and the [workspaces](https://github.com/shire-studio/herdr-workspace-setup) plugin (built with cargo) and installs the Claude plugins. Any config already on the machine is adopted into the repo, so run `git diff` afterwards to see what differs.
 
 A few things need doing by hand:
 

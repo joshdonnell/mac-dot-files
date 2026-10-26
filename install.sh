@@ -34,17 +34,20 @@ echo "Setting up herdr..."
 herdr integration install claude
 herdr integration install codex
 herdr integration install opencode
+# Workspace status row and the prefix+a popup in herdr/.config/herdr/config.toml. Builds with cargo.
+herdr plugin install shire-studio/herdr-workspace-setup --yes || true
 
 echo "Installing Claude plugins..."
 # Marketplaces are also declared in claude/.claude/settings.json, so Claude installs missing plugins on start.
 # Installing them here means they work in the first session too.
-for marketplace in pbakaus/impeccable jarrodwatts/claude-hud laravel/agent-skills vercel-labs/agent-browser; do
+for marketplace in pbakaus/impeccable jarrodwatts/claude-hud laravel/agent-skills vercel-labs/agent-browser kaankiziltug/logo-design-skill; do
   claude plugin marketplace add "$marketplace" || true
 done
 for plugin in \
   mattpocock-skills@claude-plugins-official superpowers@claude-plugins-official \
   frontend-design@claude-plugins-official stripe@claude-plugins-official swift-lsp@claude-plugins-official \
-  impeccable@impeccable claude-hud@claude-hud laravel@laravel agent-browser@agent-browser; do
+  impeccable@impeccable claude-hud@claude-hud laravel@laravel agent-browser@agent-browser \
+  logo-design@logo-design-skill; do
   claude plugin install "$plugin"
 done
 
