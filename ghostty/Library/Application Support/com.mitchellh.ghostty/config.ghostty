@@ -5,3 +5,6 @@ cursor-style = block
 shell-integration-features = no-cursor,ssh-env,ssh-terminfo
 unfocused-split-opacity = 1
 keybind = super+e=unbind
+# Cmd+K is a no-op on the alternate screen (herdr, Claude Code), so also send Ctrl+L to the running app.
+keybind = super+k=clear_screen
+keybind = chain=text:\x0c
