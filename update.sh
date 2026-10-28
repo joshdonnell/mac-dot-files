@@ -7,8 +7,6 @@ set -e
 
 cd "$(dirname "$0")"
 
-source packages.sh
-
 if [ -n "$(git status --porcelain)" ]; then
   echo "The repo has uncommitted changes. Commit or discard them first:"
   git status --short
@@ -17,6 +15,9 @@ fi
 
 echo "Pulling..."
 git pull --ff-only
+
+# Sourced after the pull, so a package removed upstream isn't restowed from the old list.
+source packages.sh
 
 echo "Linking configs..."
 # herdr keeps logs, sessions and plugins.json next to its config, so link its files rather than the folder.
@@ -27,7 +28,8 @@ done
 stow --restow --target="$HOME" "${OTHER_PACKAGES[@]}"
 stow --restow --target="$HOME" --no-folding herdr
 # A package dropped from packages.sh leaves its links behind, pointing at files the pull removed.
-find "$HOME/.config" "$HOME/Library/Application Support" -maxdepth 3 -type l -lname '*mac-dot-files/*' ! -exec test -e {} \; -print -delete
+# macOS denies access to some Application Support folders, which makes find fail and set -e stop the script.
+find "$HOME/.config" "$HOME/Library/Application Support" -maxdepth 3 -type l -lname '*mac-dot-files/*' ! -exec test -e {} \; -print -delete 2>/dev/null || true
 
 echo "Updating Homebrew packages..."
 brew bundle --file=Brewfile

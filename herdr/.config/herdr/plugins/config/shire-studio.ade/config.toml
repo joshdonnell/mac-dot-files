@@ -14,5 +14,5 @@ agent_command = "claude"
 enabled = true
 
 [viewer]
-# The e key opens the file at the line on screen. That's a quick edit, so Zed (PhpStorm is for bigger work). $EDITOR isn't set, so it's named rather than falling back to vi.
-editor = "zed {path}:{line}"
+# The e key opens the file at the line on screen. $EDITOR isn't set, so name PhpStorm rather than fall back to vi.
+editor = "phpstorm --line {line} {path}"
