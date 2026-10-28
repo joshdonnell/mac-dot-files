@@ -18,7 +18,7 @@ echo "Installing Homebrew packages..."
 brew bundle --file=Brewfile
 
 echo "Linking configs..."
-mkdir -p "$HOME/.config" "$HOME/.local/bin" "$HOME/Library/Application Support/com.mitchellh.ghostty" "$HOME/Library/Application Support/lazygit"
+mkdir -p "$HOME/.config" "$HOME/.local/bin" "$HOME/Library/Application Support/com.mitchellh.ghostty"
 # herdr keeps logs, sessions and plugins.json next to its config, so link its files rather than the folder.
 OTHER_PACKAGES=()
 for PACKAGE in "${PACKAGES[@]}"; do
@@ -34,8 +34,8 @@ echo "Setting up herdr..."
 herdr integration install claude
 herdr integration install codex
 herdr integration install opencode
-# Workspace status row and the prefix+a popup in herdr/.config/herdr/config.toml. Builds with cargo.
-herdr plugin install shire-studio/herdr-workspace-setup --yes || true
+# herdr-ade: the workspace status rows and the prefix+d, prefix+a and prefix+f keys in herdr/.config/herdr/config.toml. Builds with cargo.
+herdr plugin install shire-studio/herdr-ade --yes || true
 
 echo "Installing Claude plugins..."
 # Marketplaces are also declared in claude/.claude/settings.json, so Claude installs missing plugins on start.

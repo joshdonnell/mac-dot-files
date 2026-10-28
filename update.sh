@@ -26,12 +26,23 @@ for PACKAGE in "${PACKAGES[@]}"; do
 done
 stow --restow --target="$HOME" "${OTHER_PACKAGES[@]}"
 stow --restow --target="$HOME" --no-folding herdr
+# A package dropped from packages.sh leaves its links behind, pointing at files the pull removed.
+find "$HOME/.config" "$HOME/Library/Application Support" -maxdepth 3 -type l -lname '*mac-dot-files/*' ! -exec test -e {} \; -print -delete
 
 echo "Updating Homebrew packages..."
 brew bundle --file=Brewfile
 
 echo "Updating global Composer packages..."
 COMPOSER_HOME="$HOME/.config/composer" composer global install
+
+echo "Updating herdr plugins..."
+# herdr-ade replaces herdr-workspace-setup, and with both installed a new worktree is set up twice.
+if herdr plugin list 2>/dev/null | grep -q "shire-studio.workspaces "; then
+  herdr plugin uninstall shire-studio.workspaces || true
+fi
+if ! herdr plugin list 2>/dev/null | grep -q "shire-studio.ade "; then
+  herdr plugin install shire-studio/herdr-ade --yes || true
+fi
 
 echo "Reloading herdr..."
 herdr server reload-config >/dev/null 2>&1 || echo "herdr isn't running, it will load the config on next launch."

@@ -67,7 +67,7 @@ alias pest="./vendor/bin/pest --parallel"
 alias phpstan="./vendor/bin/phpstan --memory-limit='2G'"
 alias pamf="pa migrate:fresh --seed && pa dev:seed --fresh"
 
-# Attach to the devbox herdr with its keybindings, since local custom commands (lazygit on prefix+d) aren't sent over --remote.
+# Attach to the devbox herdr with its keybindings, since local custom commands (the herdr-ade keys) aren't sent over --remote.
 alias devbox="herdr --remote devbox@devbox --remote-keybindings server"
 
 # Fetch a GitHub branch and open it as a Herdr worktree. Run from the repo: hwt <branch>

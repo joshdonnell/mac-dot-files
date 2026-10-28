@@ -53,21 +53,24 @@ peach = "#d56e0c"
 [keys]
 prefix = "ctrl+s"
 
-# Lazygit over the focused pane, on that pane's repo. q or Esc closes it.
+# herdr-ade (shire-studio.ade). The sidebar takes prefix+d, so the workspace popup sits on prefix+a instead of herdr-ade's default.
 [[keys.command]]
 key = "prefix+d"
-type = "popup"
-command = "cd \"${HERDR_ACTIVE_PANE_CWD:-.}\" && exec lazygit"
-description = "Git status"
-width = "90%"
-height = "85%"
+type = "plugin_action"
+command = "shire-studio.ade.sidebar"
+description = "toggle sidebar"
 
-# Workspace plugin popup (shire-studio.workspaces).
 [[keys.command]]
 key = "prefix+a"
 type = "plugin_action"
-command = "shire-studio.workspaces.open"
+command = "shire-studio.ade.workspace"
 description = "workspace status and actions"
+
+[[keys.command]]
+key = "prefix+f"
+type = "plugin_action"
+command = "shire-studio.ade.files"
+description = "find a file"
 
 [ui]
 agent_panel_sort = "priority"
