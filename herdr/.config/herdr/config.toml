@@ -29,26 +29,26 @@ blue = "#75bbb3"           # starship aqua
 teal = "#8CD3CB"
 peach = "#db9f9c"
 
-# Light Lite.
+# Light Lite. Colours match the Ghostty light-lite palette, darkened to at least 4.5:1 on white.
 [theme.custom.light]
-accent = "#509475"         # starship pine, readable on white
+accent = "#458066"         # starship pine, darkened
 panel_bg = "#f5f5f5"
 active_row_bg = "#eeeeee"
 selection_bg = "#dddddd"
 surface0 = "#e8e8e8"
 surface1 = "#dddddd"
 surface_dim = "#f0f0f0"
-overlay0 = "#aaaaaa"
-overlay1 = "#777777"
+overlay0 = "#959595"       # ghostty palette 8
+overlay1 = "#757575"       # ghostty palette 7
 text = "#222222"
 subtext0 = "#555555"
 mauve = "#a142f4"
-green = "#34a853"
-yellow = "#b38600"
-red = "#e84135"
-blue = "#4285f4"
-teal = "#129eaf"
-peach = "#d56e0c"
+green = "#298642"
+yellow = "#956f00"
+red = "#e4271a"
+blue = "#1f6ff2"
+teal = "#0f828f"
+peach = "#b65e0a"
 
 [keys]
 prefix = "ctrl+s"
