@@ -10,12 +10,23 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 autoload -Uz compinit && compinit
 
 # nvm, from Homebrew or the install script
+# --no-use skips nvm's own `nvm use default`, which costs ~600ms per shell. The default version goes on PATH directly instead.
 export NVM_DIR="$HOME/.nvm"
 if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
-  . "/opt/homebrew/opt/nvm/nvm.sh"
+  . "/opt/homebrew/opt/nvm/nvm.sh" --no-use
 elif [ -s "$NVM_DIR/nvm.sh" ]; then
-  . "$NVM_DIR/nvm.sh"
+  . "$NVM_DIR/nvm.sh" --no-use
   [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+fi
+if [ -s "$NVM_DIR/alias/default" ]; then
+  # Newest installed version matching the alias (e.g. 24 or 24.14.1). Aliases like lts/* fall back to nvm.
+  _nvm_default=( "$NVM_DIR"/versions/node/v${$(<"$NVM_DIR/alias/default")#v}(|.*)(N/nOn[1]) )
+  if (( $#_nvm_default )); then
+    export PATH="$_nvm_default/bin:$PATH"
+  elif (( $+functions[nvm] )); then
+    nvm use default --silent >/dev/null
+  fi
+  unset _nvm_default
 fi
 
 # pnpm
