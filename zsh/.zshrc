@@ -59,6 +59,34 @@ alias pamf="pa migrate:fresh --seed && pa dev:seed --fresh"
 # Attach to the devbox herdr with its keybindings, since local custom commands (lazygit on prefix+d) aren't sent over --remote.
 alias devbox="herdr --remote devbox@devbox --remote-keybindings server"
 
+# Fetch a GitHub branch and open it as a Herdr worktree. Run from the repo: hwt <branch>
+hwt() {
+  local branch="${1:-}"
+  if [[ -z "$branch" ]]; then
+    echo "usage: hwt <branch>" >&2
+    return 1
+  fi
+
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "hwt: not inside a git repository" >&2
+    return 1
+  fi
+
+  local main
+  main="$(git worktree list --porcelain | awk 'NR==1 && $1=="worktree" { print substr($0, 10); exit }')"
+  if [[ -z "$main" ]]; then
+    echo "hwt: could not find the main worktree" >&2
+    return 1
+  fi
+
+  # Creates the local branch from origin when it is missing, and fast-forwards it when it already exists.
+  if ! git -C "$main" fetch origin "${branch}:${branch}"; then
+    return 1
+  fi
+
+  herdr worktree create --cwd "$main" --branch "$branch" --focus
+}
+
 # Terminal tools
 # ansi follows the Ghostty palette in both light and dark mode.
 export BAT_THEME="ansi"
