@@ -47,7 +47,7 @@ On the other Mac, run:
 ./update.sh
 ```
 
-It pulls, relinks every package (so new files get linked), runs `brew bundle` and `composer global install`, reloads herdr and pushes the PhpStorm settings. It stops if the repo has uncommitted changes, because apps sometimes write their own settings into these files. Look at those changes, then commit or discard them before updating. PhpStorm is skipped while it's running.
+It pulls, relinks every package (so new files get linked), runs `brew bundle` and `composer global install`, reloads herdr and pushes the PhpStorm settings. Uncommitted edits stay on this machine: apps write their own settings into these files (Herd adds PHP exports to `.zshrc`, Zed saves SSH hosts in its settings), so the pull sets local edits aside and puts them back, and the script lists what's still uncommitted at the end. Commit anything there that should be shared. If a local edit clashes with the pull, it stops before linking anything and names the files. PhpStorm is skipped while it's running.
 
 New packages go in `packages.sh`, which both scripts read.
 

@@ -1,20 +1,20 @@
 #!/bin/bash
 
 # Pull the latest configs and apply them to this machine.
-# Commit or discard local changes first, so app written settings don't slip into the merge.
+# Edits that only belong on this machine (Herd's PHP exports, Zed's SSH hosts) stay uncommitted: the pull sets them aside and puts them back.
 
 set -e
 
 cd "$(dirname "$0")"
 
-if [ -n "$(git status --porcelain)" ]; then
-  echo "The repo has uncommitted changes. Commit or discard them first:"
-  git status --short
+echo "Pulling..."
+git pull --ff-only --autostash
+# git still exits 0 when a local edit clashes with the pull, leaving conflict markers in the file and the edit in the stash.
+if [ -n "$(git diff --name-only --diff-filter=U)" ]; then
+  echo "A local edit clashes with the pull, so nothing was linked. Fix these, then run git stash drop:"
+  git diff --name-only --diff-filter=U
   exit 1
 fi
-
-echo "Pulling..."
-git pull --ff-only
 
 # Sourced after the pull, so a package removed upstream isn't restowed from the old list.
 source packages.sh
@@ -54,6 +54,11 @@ if pgrep -q -f "PhpStorm.*\.app/Contents/MacOS"; then
   echo "Skipped PhpStorm because it's running. Quit it and run ./phpstorm/sync.sh push."
 else
   ./phpstorm/sync.sh push
+fi
+
+if [ -n "$(git status --porcelain)" ]; then
+  echo "Uncommitted, so only on this machine (commit anything that should be shared):"
+  git status --short
 fi
 
 echo "Done."
