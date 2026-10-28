@@ -12,7 +12,7 @@ My macOS configs. PhpStorm uses the Light Lite theme, and Ghostty follows the sy
 | `zsh` | Shell startup files |
 | `git` | Global git ignore |
 | `claude` | Claude instructions, settings, agents and the list of installed skills |
-| `herdr` | [herdr](https://herdr.dev) terminal workspace config: theme, `ctrl+s` prefix, herdr-ade sidebar on `prefix+d`, workspace popup on `prefix+a`, file finder on `prefix+f` |
+| `herdr` | [herdr](https://herdr.dev) terminal workspace config: theme, `ctrl+s` prefix, and herdr-ade's keys: Show changes on `prefix+d`, the Git popup on `prefix+ctrl+g` (so `prefix+g` stays herdr's goto), sidebar on `prefix+i`, workspace popup on `prefix+a`, file finder on `prefix+f` |
 | `composer` | Global Composer packages, currently just `laravel/lsp`, the Laravel language server |
 
 Each package mirrors the home folder, so `zed/.config/zed/settings.json` lives at `~/.config/zed/settings.json`. [GNU Stow](https://www.gnu.org/software/stow/) symlinks them into place.

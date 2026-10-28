@@ -3,6 +3,9 @@
 
 [git]
 enabled = true
+# Git opens as a popup on prefix+ctrl+g (prefix+g stays herdr's goto), out of the sidebar, and Show changes (prefix+d) lists the changed files, so the Current tab doesn't.
+style = "popup"
+show_changes = false
 
 [workspaces]
 enabled = true
@@ -14,5 +17,5 @@ agent_command = "claude"
 enabled = true
 
 [viewer]
-# The e key opens the file at the line on screen. $EDITOR isn't set, so name PhpStorm rather than fall back to vi.
-editor = "phpstorm --line {line} {path}"
+# The e key opens the file at the line on screen. $EDITOR isn't set, so name Zed rather than fall back to vi.
+editor = "zed {path}:{line}"

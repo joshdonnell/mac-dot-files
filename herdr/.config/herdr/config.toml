@@ -53,12 +53,24 @@ peach = "#b65e0a"
 [keys]
 prefix = "ctrl+s"
 
-# herdr-ade (shire-studio.ade). The sidebar takes prefix+d, so the workspace popup sits on prefix+a instead of herdr-ade's default.
+# herdr-ade (shire-studio.ade). prefix+d shows changes (it was lazygit's key), so the sidebar sits on prefix+i. The Git popup is on prefix+ctrl+g, since prefix+g is herdr's goto.
 [[keys.command]]
-key = "prefix+d"
+key = "prefix+i"
 type = "plugin_action"
 command = "shire-studio.ade.sidebar"
 description = "toggle sidebar"
+
+[[keys.command]]
+key = "prefix+d"
+type = "plugin_action"
+command = "shire-studio.ade.diff"
+description = "show changes"
+
+[[keys.command]]
+key = "prefix+ctrl+g"
+type = "plugin_action"
+command = "shire-studio.ade.git"
+description = "git status and actions"
 
 [[keys.command]]
 key = "prefix+a"
