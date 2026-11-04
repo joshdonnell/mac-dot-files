@@ -34,6 +34,13 @@ find "$HOME/.config" "$HOME/Library/Application Support" -maxdepth 3 -type l -ln
 echo "Updating Homebrew packages..."
 brew bundle --file=Brewfile
 
+echo "Setting up Node..."
+# Only when fnm has no default yet, so an existing Node and its global npm packages are left alone.
+if ! fnm exec --using=default node -v >/dev/null 2>&1; then
+  fnm install "$NODE_VERSION"
+  fnm default "$NODE_VERSION"
+fi
+
 echo "Updating global Composer packages..."
 COMPOSER_HOME="$HOME/.config/composer" composer global install
 

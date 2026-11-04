@@ -17,6 +17,13 @@ fi
 echo "Installing Homebrew packages..."
 brew bundle --file=Brewfile
 
+echo "Setting up Node..."
+# Only when fnm has no default yet, so an existing Node and its global npm packages are left alone.
+if ! fnm exec --using=default node -v >/dev/null 2>&1; then
+  fnm install "$NODE_VERSION"
+  fnm default "$NODE_VERSION"
+fi
+
 echo "Linking configs..."
 mkdir -p "$HOME/.config" "$HOME/.local/bin" "$HOME/Library/Application Support/com.mitchellh.ghostty"
 # herdr keeps logs, sessions and plugins.json next to its config, so link its files rather than the folder.

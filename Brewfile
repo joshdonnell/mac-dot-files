@@ -10,6 +10,7 @@ brew "bat"
 brew "ripgrep"
 brew "herdr"
 brew "composer"
+brew "fnm"
 
 # Apps
 cask "ghostty"
