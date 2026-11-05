@@ -16,6 +16,14 @@ agent_command = "claude"
 [files]
 enabled = true
 
+[jira]
+# Needs Atlassian's CLI, acli, installed and logged in (acli jira auth login).
+enabled = true
+
+[sentry]
+# Needs the newer Sentry CLI, sentry (not sentry-cli), installed and logged in (sentry auth login).
+enabled = true
+
 [viewer]
 # The e key opens the file at the line on screen. $EDITOR isn't set, so name Zed rather than fall back to vi.
 editor = "zed {path}:{line}"

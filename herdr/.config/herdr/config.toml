@@ -97,10 +97,20 @@ rows = [
   ["tab"],
 ]
 
+# $pr_status comes from herdr-ade. Muted unless it's your move: red needs fixing, gold needs a reviewer or review, jade is ready to merge.
 [ui.sidebar.spaces]
 row_gap = 1
 rows = [
-  ["state_icon", "workspace"],
+  ["state_icon", "workspace", { token = "$pr_status", fg = "#7A8B7F", rules = [
+    { equals = "merged", fg = "#75bbb3" },
+    { equals = "conflicts", fg = "#FF5345", bold = true },
+    { equals = "checks failing", fg = "#FF5345", bold = true },
+    { starts_with = "changes", fg = "#FF5345", bold = true },
+    { equals = "no reviewer", fg = "#E5C736", bold = true },
+    { equals = "to review", fg = "#E5C736", bold = true },
+    { equals = "pending", fg = "#E5C736", bold = true },
+    { equals = "ready to merge", fg = "#2DD5B7", bold = true },
+  ] }],
   ["branch"],
   ["$ws_status", "$ws_running"],
 ]
