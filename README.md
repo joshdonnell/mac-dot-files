@@ -40,7 +40,7 @@ A few things need doing by hand:
 
 ## Keyboard shortcuts
 
-These copy [Omarchy's bindings](https://github.com/basecamp/omarchy/tree/master/default/hypr/bindings). Cmd can't play Super's role on a Mac because apps already use it for their own shortcuts (Cmd+Enter sends in Slack, Cmd+F finds, Cmd+B is bold), so Caps Lock becomes a Hyper key (Cmd+Ctrl+Opt+Shift) that nothing else uses. Omarchy launches apps with Super+Shift+letter, and Hyper already includes Shift, so Hyper+letter here matches Super+Shift+letter there.
+These copy [Omarchy's bindings](https://github.com/basecamp/omarchy/tree/master/default/hypr/bindings). Cmd can't play Super's role on a Mac because apps already use it for their own shortcuts (Cmd+Enter sends in Slack, Cmd+F finds, Cmd+B is bold), so Caps Lock becomes a Hyper key (Cmd+Ctrl+Opt, with Shift left out) that nothing else uses. Leaving Shift out means Hyper+Shift is a second layer. Apps sit on plain Hyper+letter so the common ones are a single chord, and Hyper+Shift takes what would clash.
 
 ### Apps
 
@@ -69,7 +69,7 @@ These copy [Omarchy's bindings](https://github.com/basecamp/omarchy/tree/master/
 | --- | --- | --- |
 | Hyper+V | Raycast Clipboard History | Super+Ctrl+V, clipboard manager |
 | Hyper+L | Raycast Lock Screen | Super+Ctrl+L, lock |
-| Hyper+Period | Raycast Search Emoji & Symbols | Super+Ctrl+E, emoji (E is Mail here) |
+| Hyper+Shift+E | Raycast Search Emoji & Symbols | Super+Ctrl+E, emoji |
 | Hyper+Up | Raycast Maximize | Super+Alt+F, full width |
 | Hyper+Left | Raycast Left Half | none, Omarchy tiles instead |
 | Hyper+Right | Raycast Right Half | none, Omarchy tiles instead |
@@ -79,7 +79,7 @@ Several Omarchy bindings already exist on macOS under Cmd, so they need no setup
 
 Raycast keeps its settings in an encrypted database, so these hotkeys can't be stowed. Set them up by hand:
 
-1. In Raycast Settings > Advanced, set Hyper Key to Caps Lock.
+1. In Raycast Settings > Advanced, set Hyper Key to Caps Lock and turn off including Shift. The Ghostty keybind listens for Cmd+Ctrl+Opt+Enter, so it only works with Shift left out.
 2. In Raycast Settings > Extensions, find each app or command and click Record Hotkey.
 3. For YouTube and X, run Create Quicklink in Raycast, then give the quicklink a hotkey the same way.
 
