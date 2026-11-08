@@ -74,8 +74,10 @@ These copy [Omarchy's bindings](https://github.com/basecamp/omarchy/tree/master/
 | Hyper+Left | Raycast Left Half | none, Omarchy tiles instead |
 | Hyper+Right | Raycast Right Half | none, Omarchy tiles instead |
 | Hyper+Down | Raycast Restore | none |
+| Hyper+Shift+F | Raycast Toggle Fullscreen | Super+F, full screen |
+| Hyper+Shift+M | Raycast Minimize | Super+M, minimize |
 
-Several Omarchy bindings already exist on macOS under Cmd, so they need no setup. Cmd+W and Cmd+Q close, Cmd+M minimizes, Cmd+C, Cmd+V, Cmd+X and Cmd+A work as Omarchy's universal clipboard, Globe+F toggles full screen, and Cmd+Space opens Raycast in place of the Omarchy menu.
+Several Omarchy bindings already exist on macOS under Cmd, so they need no setup. Cmd+W and Cmd+Q close, Cmd+C, Cmd+V, Cmd+X and Cmd+A work as Omarchy's universal clipboard, and Cmd+Space opens Raycast in place of the Omarchy menu.
 
 Raycast keeps its settings in an encrypted database, so these hotkeys can't be stowed. Set them up by hand:
 
