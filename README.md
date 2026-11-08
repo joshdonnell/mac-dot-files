@@ -36,6 +36,54 @@ A few things need doing by hand:
 1. Create `~/.gitconfig` with the name, email and signing setup for that machine. It isn't in the repo because it differs between machines.
 2. Set the wallpaper to Omarchy's Osaka Jade "glowing city" in System Settings > Wallpaper. Wallpapers aren't part of this repo.
 3. Install the Light Lite plugin from the JetBrains Marketplace (it's listed in `phpstorm/plugins.txt`), then restart PhpStorm.
+4. Set up the Raycast Hyper key and app hotkeys, and give Ghostty Accessibility access, as described in [Keyboard shortcuts](#keyboard-shortcuts).
+
+## Keyboard shortcuts
+
+These copy [Omarchy's bindings](https://github.com/basecamp/omarchy/tree/master/default/hypr/bindings). Cmd can't play Super's role on a Mac because apps already use it for their own shortcuts (Cmd+Enter sends in Slack, Cmd+F finds, Cmd+B is bold), so Caps Lock becomes a Hyper key (Cmd+Ctrl+Opt+Shift) that nothing else uses. Omarchy launches apps with Super+Shift+letter, and Hyper already includes Shift, so Hyper+letter here matches Super+Shift+letter there.
+
+### Apps
+
+| Shortcut | Opens | Omarchy equivalent |
+| --- | --- | --- |
+| Hyper+Enter | New Ghostty window | Super+Enter, terminal |
+| Hyper+B | Helium | Super+Shift+B, browser |
+| Hyper+F | Finder | Super+Shift+F, file manager |
+| Hyper+N | Zed | Super+Shift+N, editor |
+| Hyper+O | Obsidian | Super+Shift+O, Obsidian |
+| Hyper+M | Spotify | Super+Shift+M, music |
+| Hyper+A | Claude | Super+Shift+A, ChatGPT |
+| Hyper+C | Calendar | Super+Shift+C, calendar |
+| Hyper+E | Mail | Super+Shift+E, email |
+| Hyper+G | Messages | Super+Shift+G, Signal |
+| Hyper+T | Activity Monitor | Super+Shift+T, btop |
+| Hyper+Q | Calculator | Super+Shift+Q, calculator |
+| Hyper+P | Photos | Super+Shift+P, Google Photos |
+| Hyper+S | Maps | Super+Shift+S, Google Maps |
+| Hyper+Y | youtube.com (Raycast Quicklink) | Super+Shift+Y, YouTube |
+| Hyper+X | x.com (Raycast Quicklink) | Super+Shift+X, X |
+
+### Utilities and windows
+
+| Shortcut | Does | Omarchy equivalent |
+| --- | --- | --- |
+| Hyper+V | Raycast Clipboard History | Super+Ctrl+V, clipboard manager |
+| Hyper+L | Raycast Lock Screen | Super+Ctrl+L, lock |
+| Hyper+Period | Raycast Search Emoji & Symbols | Super+Ctrl+E, emoji (E is Mail here) |
+| Hyper+Up | Raycast Maximize | Super+Alt+F, full width |
+| Hyper+Left | Raycast Left Half | none, Omarchy tiles instead |
+| Hyper+Right | Raycast Right Half | none, Omarchy tiles instead |
+| Hyper+Down | Raycast Restore | none |
+
+Several Omarchy bindings already exist on macOS under Cmd, so they need no setup. Cmd+W and Cmd+Q close, Cmd+M minimizes, Cmd+C, Cmd+V, Cmd+X and Cmd+A work as Omarchy's universal clipboard, Globe+F toggles full screen, and Cmd+Space opens Raycast in place of the Omarchy menu.
+
+Raycast keeps its settings in an encrypted database, so these hotkeys can't be stowed. Set them up by hand:
+
+1. In Raycast Settings > Advanced, set Hyper Key to Caps Lock.
+2. In Raycast Settings > Extensions, find each app or command and click Record Hotkey.
+3. For YouTube and X, run Create Quicklink in Raycast, then give the quicklink a hotkey the same way.
+
+Hyper+Enter is bound twice. Ghostty's config has a global keybind that opens a new window from any app, which needs Ghostty in System Settings > Privacy & Security > Accessibility. That keybind only works while Ghostty is running, so the Raycast hotkey for Ghostty launches it when it's closed.
 
 ## Keeping machines in sync
 

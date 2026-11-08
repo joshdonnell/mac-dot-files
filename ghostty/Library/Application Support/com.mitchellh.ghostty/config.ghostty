@@ -8,3 +8,6 @@ keybind = super+e=unbind
 # Cmd+K is a no-op on the alternate screen (herdr, Claude Code), so also send Ctrl+L to the running app.
 keybind = super+k=clear_screen
 keybind = chain=text:\x0c
+# Hyper+Enter (Caps Lock via Raycast's Hyper Key) opens a new window from any app, like Omarchy's Super+Enter.
+# Global keybinds need Ghostty in System Settings > Privacy & Security > Accessibility, and Ghostty must be running.
+keybind = global:super+ctrl+alt+shift+enter=new_window
