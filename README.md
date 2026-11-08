@@ -79,6 +79,8 @@ These copy [Omarchy's bindings](https://github.com/basecamp/omarchy/tree/master/
 
 Several Omarchy bindings already exist on macOS under Cmd, so they need no setup. Cmd+W and Cmd+Q close, Cmd+C, Cmd+V, Cmd+X and Cmd+A work as Omarchy's universal clipboard, and Cmd+Space opens Raycast in place of the Omarchy menu.
 
+The install script turns off the macOS emoji picker so only Raycast's is left. The Globe key is set to do nothing, and the Emoji & Symbols menu item moves from Ctrl+Cmd+Space to Cmd+Ctrl+Opt+Shift+F19, a key no keyboard sends (macOS has no way to remove it outright). Log out and back in for the Globe key change, and reopen apps for the menu change.
+
 Raycast keeps its settings in an encrypted database, so these hotkeys can't be stowed. Set them up by hand:
 
 1. In Raycast Settings > Advanced, set Hyper Key to Caps Lock and turn off including Shift. The Ghostty keybind listens for Cmd+Ctrl+Opt+Enter, so it only works with Shift left out.

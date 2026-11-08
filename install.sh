@@ -58,4 +58,11 @@ for plugin in \
   claude plugin install "$plugin"
 done
 
+echo "Turning off the macOS emoji picker shortcuts..."
+# Raycast's emoji search on Hyper+Shift+E replaces them (see Keyboard shortcuts in the README).
+# The Globe key does nothing instead of opening Emoji & Symbols.
+defaults write com.apple.HIToolbox AppleFnUsageType -int 0
+# Ctrl+Cmd+Space can't be removed, so the menu item moves to Cmd+Ctrl+Opt+Shift+F19, which no keyboard sends.
+defaults write -g NSUserKeyEquivalents -dict-add "Emoji & Symbols" '@^~$\Uf71c'
+
 echo "Done."
