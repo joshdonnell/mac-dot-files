@@ -6,8 +6,22 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # Completions (Docker CLI and anything Homebrew adds)
+# Homebrew's dir is added here too, not only via brew shellenv in .zprofile, so login and
+# non-login shells see the same fpath. Otherwise each switch between them rebuilds the dump.
+typeset -U fpath
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 [ -d "$HOME/.docker/completions" ] && fpath=("$HOME/.docker/completions" $fpath)
-autoload -Uz compinit && compinit
+
+# Run the full compinit (security audit + rebuild check) at most once a day, use the cached dump otherwise.
+autoload -Uz compinit
+() {
+  setopt local_options extended_glob
+  if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+    compinit
+  else
+    compinit -C
+  fi
+}
 
 # fnm (Node version manager). --use-on-cd switches version when entering a folder with .nvmrc or .node-version.
 command -v fnm >/dev/null && eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
