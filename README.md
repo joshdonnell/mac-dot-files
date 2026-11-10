@@ -1,6 +1,6 @@
 # Mac Dot Files
 
-My macOS configs. PhpStorm uses the Light Lite theme, and Ghostty follows the system appearance (Light Lite in light mode, Osaka Jade in dark mode). Zed and the prompt still carry Osaka Jade from [Omarchy](https://omarchy.org).
+My macOS configs. Ghostty follows the system appearance (Light Lite in light mode, Osaka Jade in dark mode). Zed and the prompt still carry Osaka Jade from [Omarchy](https://omarchy.org).
 
 ## What's in here
 
@@ -17,10 +17,6 @@ My macOS configs. PhpStorm uses the Light Lite theme, and Ghostty follows the sy
 
 Each package mirrors the home folder, so `zed/.config/zed/settings.json` lives at `~/.config/zed/settings.json`. [GNU Stow](https://www.gnu.org/software/stow/) symlinks them into place.
 
-`phpstorm/settings` holds the PhpStorm keymap, code style, editor, window layout (Project files on the right, tool window bars shown) and default project settings (Pint on save, PHPStan, oxlint and oxfmt on save), and `phpstorm/plugins.txt` lists the installed plugins. PhpStorm replaces its files when it saves, which breaks symlinks, so these are copied rather than stowed. Run `./phpstorm/sync.sh pull` to copy the IDE's current settings into the repo, or quit PhpStorm and run `./phpstorm/sync.sh push` to copy them back. The script uses the PhpStorm EAP config folder when there is one and the stable release otherwise. It only touches the files it lists, so the license key, recent projects and SSH configs stay out of the repo.
-
-PhpStorm uses the Light Lite colour scheme (the `Light_Lite` plugin from [brendt/phpstorm-light-lite-theme](https://github.com/brendt/phpstorm-light-lite-theme)) with the built in light UI theme. The Ghostty Light Lite theme copies its colours. The old Osaka Jade theme lives in its own repo, [osaka-jade-phpstorm](https://github.com/joshdonnell/osaka-jade-phpstorm).
-
 ## Install
 
 ```bash
@@ -35,8 +31,7 @@ A few things need doing by hand:
 
 1. Create `~/.gitconfig` with the name, email and signing setup for that machine. It isn't in the repo because it differs between machines.
 2. Set the wallpaper to Omarchy's Osaka Jade "glowing city" in System Settings > Wallpaper. Wallpapers aren't part of this repo.
-3. Install the Light Lite plugin from the JetBrains Marketplace (it's listed in `phpstorm/plugins.txt`), then restart PhpStorm.
-4. Set up the Raycast Hyper key and app hotkeys, and give Ghostty Accessibility access, as described in [Keyboard shortcuts](#keyboard-shortcuts).
+3. Set up the Raycast Hyper key and app hotkeys, and give Ghostty Accessibility access, as described in [Keyboard shortcuts](#keyboard-shortcuts).
 
 ## Keyboard shortcuts
 
@@ -91,7 +86,7 @@ Hyper+Enter is bound twice. Ghostty's config has a global keybind that opens a n
 
 ## Keeping machines in sync
 
-Stowed configs are symlinks into the repo, so changing a setting on one Mac changes the repo. To share it, check `git diff`, then commit and push. For PhpStorm, run `./phpstorm/sync.sh pull` before committing.
+Stowed configs are symlinks into the repo, so changing a setting on one Mac changes the repo. To share it, check `git diff`, then commit and push.
 
 On the other Mac, run:
 
@@ -99,7 +94,7 @@ On the other Mac, run:
 ./update.sh
 ```
 
-It pulls, relinks every package (so new files get linked), runs `brew bundle` and `composer global install`, reloads herdr and pushes the PhpStorm settings. Uncommitted edits stay on this machine: apps write their own settings into these files (Herd adds PHP exports to `.zshrc`, Zed saves SSH hosts in its settings), so the pull sets local edits aside and puts them back, and the script lists what's still uncommitted at the end. Commit anything there that should be shared. If a local edit clashes with the pull, it stops before linking anything and names the files. PhpStorm is skipped while it's running.
+It pulls, relinks every package (so new files get linked), runs `brew bundle` and `composer global install`, and reloads herdr. Uncommitted edits stay on this machine: apps write their own settings into these files (Herd adds PHP exports to `.zshrc`, Zed saves SSH hosts in its settings), so the pull sets local edits aside and puts them back, and the script lists what's still uncommitted at the end. Commit anything there that should be shared. If a local edit clashes with the pull, it stops before linking anything and names the files.
 
 New packages go in `packages.sh`, which both scripts read.
 

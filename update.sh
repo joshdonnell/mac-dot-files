@@ -56,13 +56,6 @@ fi
 echo "Reloading herdr..."
 herdr server reload-config >/dev/null 2>&1 || echo "herdr isn't running, it will load the config on next launch."
 
-# PhpStorm overwrites its settings on exit, so only push while it's closed.
-if pgrep -q -f "PhpStorm.*\.app/Contents/MacOS"; then
-  echo "Skipped PhpStorm because it's running. Quit it and run ./phpstorm/sync.sh push."
-else
-  ./phpstorm/sync.sh push
-fi
-
 if [ -n "$(git status --porcelain)" ]; then
   echo "Uncommitted, so only on this machine (commit anything that should be shared):"
   git status --short
