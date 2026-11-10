@@ -50,9 +50,6 @@ export HERD_PHP_80_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/p
 export HERD_PHP_81_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/81/"
 export HERD_PHP_82_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/82/"
 export HERD_PHP_83_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/83/"
-export HERD_PHP_84_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/84/"
-export HERD_PHP_85_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/85/"
-export HERD_PHP_86_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/86"
 
 # DBngin MySQL client (mysql/mysqldump for native tests)
 export PATH="/Users/Shared/DBngin/mysql/8.0.33/bin:$PATH"
@@ -110,3 +107,15 @@ alias ls="eza"
 alias ll="eza -la"
 alias tree="eza --tree"
 alias cat="bat"
+
+
+# Herd injected PHP 8.5 configuration.
+export HERD_PHP_85_INI_SCAN_DIR="/Users/jdonnell/Library/Application Support/Herd/config/php/85"
+
+
+# Herd injected PHP 8.6 configuration.
+export HERD_PHP_86_INI_SCAN_DIR="/Users/jdonnell/Library/Application Support/Herd/config/php/86"
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/jdonnell/Library/Application Support/Herd/config/php/84"
